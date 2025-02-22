@@ -43,7 +43,8 @@ OpenAI and ChatGPT repo
 22. [Key Phrases Extraction from text, Sentiment Analysis, Linked Entities](https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/4-extract-key-phrases)
 23. [Translate speech to text. Materials](https://learn.microsoft.com/en-us/training/modules/translate-speech-speech-service/4-synthesize-translation)    
 24. [Translate speech to text and synthesize the output if needed. Example](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-started-speech-translation?pivots=programming-language-csharp&tabs=macos%2Cterminal)
-25. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)  
+25. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)
+26. [Run Cognitive Services in Docker](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)  
 
 
 ## Machine Learning Materials
