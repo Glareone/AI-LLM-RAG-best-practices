@@ -71,6 +71,7 @@ OpenAI and ChatGPT repo
 16. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
 17. Table extraction in RAG systems (In Progress)
 18. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
+19. Misjudgements using LogProbs (In Progress)
 
 
 ## My Workshops
