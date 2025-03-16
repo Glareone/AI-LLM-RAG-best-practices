@@ -65,13 +65,14 @@ OpenAI and ChatGPT repo
 10. [Non deterministic embedding results](https://www.linkedin.com/posts/aleksei-kolesnikov-aa199217b_ai-embeddings-openai-activity-7208369707937067009-gTkJ)
 11. [AI Search vs PostgreSQL with pgvector in PROD](https://github.com/user-attachments/files/16404873/Post.10.-.AI.Search.vs.PostgreSQL.pdf)
 12. [Prod-Ready LLM Solutions. Cook Book.](https://github.com/user-attachments/files/16471905/post.12.pdf)
-13. Crew.AI. Agents in LLM Applications (In Progress)
-14. Pydantic data classes and how to manage the output format (In Progress)
-15. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
-16. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
-17. Table extraction in RAG systems (In Progress)
-18. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
-19. Misjudgements using LogProbs (In Progress)
+13. [Quality Framework For RAG Applications.pdf](https://github.com/user-attachments/files/19273774/Quality.Framework.pdf)
+14. Crew.AI. Agents in LLM Applications (In Progress)
+15. Pydantic data classes and how to manage the output format (In Progress)
+16. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
+17. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
+18. Table extraction in RAG systems (In Progress)
+19. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
+20. Misjudgements using LogProbs (In Progress)
 
 
 ## My Workshops
