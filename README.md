@@ -132,10 +132,9 @@ OpenAI and ChatGPT repo
 3. [Cognitive Search. Indexers. AI Enrichment. Build-in Skills](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/azure-ai-search.md)
 4. [Document Intelligence](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Document-intelligence.md)
 
-## Azure Cognitive Search & Document Intelligence. Practical Part
-1. Semantic Search (in progress)
+## Azure AI Search & Document Intelligence. Practical Part
+1. AI Search vs PostgreSQL pgvector (https://github.com/user-attachments/files/16404873/Post.10.-.AI.Search.vs.PostgreSQL.pdf)
 2. Document Intelligence (in progress)
-3. Semantic Search vs Document Intelligence (in progress)
 
 # General Information
 #### 0: RAG. Cheatsheet
