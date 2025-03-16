@@ -78,11 +78,16 @@ Theoretical Part
 25. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)
 26. [Run Cognitive Services in Docker](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)  
 
+### Azure Search & Document Intelligence
+1. [Cognitive Search. Video](https://www.youtube.com/watch?v=5z32NS4IG0w)
+2. [Cognitive Search. From Zero to Hero](https://www.youtube.com/watch?v=shT9-7AofKU&t=1s)
+3. [Cognitive Search. Indexers. AI Enrichment. Build-in Skills](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/azure-ai-search.md)
+4. [Document Intelligence](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Document-intelligence.md)
+
 ### Machine Learning Materials
 1. [Machine Learning](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Machine-Learning.md)  
     a. [Machine Learning lab by Microsoft](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/01-machine-learning.html)  
 3. [How Deep Learning Works](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Deep-Learning-Works.md)
-
 
 ## Extra materials
 1. [Vector Database selection & comparison. VectorDB](https://superlinked.com/vector-db-comparison)  
@@ -106,7 +111,8 @@ Theoretical Part
 14. [LangChain meets Go](https://github.com/Glareone/OpenAI-ChatGPT-best-practices/blob/main/Langchain%20meets%20Go/readme.md)
 15. TenzorZero Framework (In progress)
 16. [Key Phrases Extraction. AI Language. Sentiment Analysis. Extracted Linked Entities](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/AI-Language.md)
-17. [AI Search and Custom Skill using Azure Function](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/AI%20Search%20and%20Custom%20Skills)  
+17. [AI Search and Custom Skill using Azure Function](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/AI%20Search%20and%20Custom%20Skills)
+18. Document Intelligence, Best Practices (In progress)
 
 
 Semantic Kernel
@@ -129,17 +135,6 @@ LangChain
 -----------
 ## LangChain using Golang
 1. General Examples (In Progress)
-
-# Azure
-## Azure Search & Document Intelligence. Theoretical Part
-1. [Cognitive Search. Video](https://www.youtube.com/watch?v=5z32NS4IG0w)
-2. [Cognitive Search. From Zero to Hero](https://www.youtube.com/watch?v=shT9-7AofKU&t=1s)
-3. [Cognitive Search. Indexers. AI Enrichment. Build-in Skills](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/azure-ai-search.md)
-4. [Document Intelligence](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Document-intelligence.md)
-
-## Azure AI Search & Document Intelligence. Practical Part
-1. AI Search vs PostgreSQL pgvector (https://github.com/user-attachments/files/16404873/Post.10.-.AI.Search.vs.PostgreSQL.pdf)
-2. Document Intelligence (in progress)
 
 # General Information
 #### 0: RAG. Cheatsheet
