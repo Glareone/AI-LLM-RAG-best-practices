@@ -1,7 +1,39 @@
 OpenAI and ChatGPT repo
 
-## Theoretical Part. Table of Content
-0. [Six Principles of responsible AI](#six-principles-of-responsible-ai)
+My Workshops and Posts
+----------------
+### My LinkedIn Posts & Presentations
+1. [GenAI. Where could be applied. Post 1.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013300/GenAI.Fields.Post.1.pdf)  
+2. [GenAI in Application Refactoring field, Slides.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013311/LinkedIn.post.day.2.compressed.pdf)  
+3. [Legal problems with AI.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013316/Legal.problems.with.AI.pdf)  
+4. [Paradigms: Rag, Self-RAG, Re-Ranking RAG, FLARE v.2.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14037439/Rag.Self-RAG.FLARE.Re-Ranking.pdf)  
+5. [Working with opinionated requests. S2A, RLHF, RLAIF.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14050997/Post.5.pdf)  
+6. [Multi-Modal RAG and its features.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14077737/Post.6.pdf)   
+7. [Measuring the GenAI Quality.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14156446/post.7.with.add.slides.pdf)
+8. [LLM leveraging RLHF in code review](https://www.linkedin.com/posts/aleksei-kolesnikov-aa199217b_criticgpt-activity-7212381032992432128-OKvG)  
+9. [Everything of Thoughts (XoT). All modern techniques in one place](https://www.linkedin.com/feed/update/urn:li:activity:7209092335526158336)  
+10. [Non deterministic embedding results](https://www.linkedin.com/posts/aleksei-kolesnikov-aa199217b_ai-embeddings-openai-activity-7208369707937067009-gTkJ)
+11. [AI Search vs PostgreSQL with pgvector in PROD](https://github.com/user-attachments/files/16404873/Post.10.-.AI.Search.vs.PostgreSQL.pdf)
+12. [Prod-Ready LLM Solutions. Cook Book.](https://github.com/user-attachments/files/16471905/post.12.pdf)
+13. [Quality Framework For RAG Applications.pdf](https://github.com/user-attachments/files/19273774/Quality.Framework.pdf)
+14. Crew.AI. Agents in LLM Applications (In Progress)
+15. Pydantic data classes and how to manage the output format (In Progress)
+16. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
+17. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
+18. Table extraction in RAG systems (In Progress)
+19. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
+20. Misjudgements using LogProbs (In Progress)
+
+### My Workshops
+1. [June 2023. My Workshop Presentation. Run 1.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/11951964/Workshop.Introduction.pptx)  
+2. [Online Workshop. ChatGPT -> Azure Function -> PowerAutomate. Run 2.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13213425/Workshop.Introduction.v.3.pptx)
+3. [Online Workshop. Run 3. Deep Learning -> Prompting -> ChatGPT -> Azure Function -> PowerAutomate](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13368718/Workshop.Introduction.v.4.FINAL.pptx)
+4. [Online+Offline Workshop for EHU University](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13368730/EHU.Workshop.v.2.pptx)  
+5. [Talk #3. RAG, FLARE, S2A, RLHF, RLAIF, Self-RAG, Re-Ranking. Common approaches and their pros & cons](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14328529/GenAI.RAG.FLARE.Content.Filtering.pdf)  
+
+Theoretical Part
+----------------
+0. [Six Principles of responsible AI](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/responsible-generative-ai.md)
 1. [Responsible AI. Trusted AI Framework. Content Filters. Harmful Content. Prerelease Reviews](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/responsible-generative-ai.md)  
 2. [What is ChatGPT Doing. and why does it work](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/?fbclid=IwAR0eV1C7bPYQeEX0BbmqR_8zAFTgf4S5q-bEXoG3ZK7fmxgMICj-QqW6ZWM)
 3. [LLM UseCase in Google. Sorting Optimization](https://www.artisana.ai/articles/googles-deepmind-ai-shatters-records-with-a-70-faster-sorting-algorithm)
@@ -18,7 +50,7 @@ OpenAI and ChatGPT repo
 14. [Azure Language Service. Question-Answer Knowledge base for bots. Question Answering service.](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/language-knowledge-base.md)
 15. [Regression. Logistic and Linear Regression. Multiclass regression](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/regression-linear-and-logistic-regression.md)
 
-## Azure Learn Useful Materials
+### Azure Learn Useful Materials
 1. [AI Search. Debug Search Issues](https://learn.microsoft.com/en-us/training/modules/maintain-azure-cognitive-search-solution/07-debug-search-issues-use-azure-portal)
 2. [AI Search. Performance and Monitoring](https://learn.microsoft.com/en-us/training/modules/maintain-azure-cognitive-search-solution/03-optimize-performance-of-azure-cognitive-search-solution)
 3. [AI Search. Search and Scoring](https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/7-enhance-index)
@@ -46,41 +78,11 @@ OpenAI and ChatGPT repo
 25. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)
 26. [Run Cognitive Services in Docker](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)  
 
-
-## Machine Learning Materials
+### Machine Learning Materials
 1. [Machine Learning](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Machine-Learning.md)  
     a. [Machine Learning lab by Microsoft](https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/01-machine-learning.html)  
 3. [How Deep Learning Works](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/Deep-Learning-Works.md)
 
-## My LinkedIn Posts & Presentations
-1. [GenAI. Where could be applied. Post 1.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013300/GenAI.Fields.Post.1.pdf)  
-2. [GenAI in Application Refactoring field, Slides.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013311/LinkedIn.post.day.2.compressed.pdf)  
-3. [Legal problems with AI.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14013316/Legal.problems.with.AI.pdf)  
-4. [Paradigms: Rag, Self-RAG, Re-Ranking RAG, FLARE v.2.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14037439/Rag.Self-RAG.FLARE.Re-Ranking.pdf)  
-5. [Working with opinionated requests. S2A, RLHF, RLAIF.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14050997/Post.5.pdf)  
-6. [Multi-Modal RAG and its features.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14077737/Post.6.pdf)   
-7. [Measuring the GenAI Quality.pdf](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14156446/post.7.with.add.slides.pdf)
-8. [LLM leveraging RLHF in code review](https://www.linkedin.com/posts/aleksei-kolesnikov-aa199217b_criticgpt-activity-7212381032992432128-OKvG)  
-9. [Everything of Thoughts (XoT). All modern techniques in one place](https://www.linkedin.com/feed/update/urn:li:activity:7209092335526158336)  
-10. [Non deterministic embedding results](https://www.linkedin.com/posts/aleksei-kolesnikov-aa199217b_ai-embeddings-openai-activity-7208369707937067009-gTkJ)
-11. [AI Search vs PostgreSQL with pgvector in PROD](https://github.com/user-attachments/files/16404873/Post.10.-.AI.Search.vs.PostgreSQL.pdf)
-12. [Prod-Ready LLM Solutions. Cook Book.](https://github.com/user-attachments/files/16471905/post.12.pdf)
-13. [Quality Framework For RAG Applications.pdf](https://github.com/user-attachments/files/19273774/Quality.Framework.pdf)
-14. Crew.AI. Agents in LLM Applications (In Progress)
-15. Pydantic data classes and how to manage the output format (In Progress)
-16. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
-17. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
-18. Table extraction in RAG systems (In Progress)
-19. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
-20. Misjudgements using LogProbs (In Progress)
-
-
-## My Workshops
-1. [June 2023. My Workshop Presentation. Run 1.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/11951964/Workshop.Introduction.pptx)  
-2. [Online Workshop. ChatGPT -> Azure Function -> PowerAutomate. Run 2.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13213425/Workshop.Introduction.v.3.pptx)
-3. [Online Workshop. Run 3. Deep Learning -> Prompting -> ChatGPT -> Azure Function -> PowerAutomate](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13368718/Workshop.Introduction.v.4.FINAL.pptx)
-4. [Online+Offline Workshop for EHU University](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/13368730/EHU.Workshop.v.2.pptx)  
-5. [Talk #3. RAG, FLARE, S2A, RLHF, RLAIF, Self-RAG, Re-Ranking. Common approaches and their pros & cons](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/14328529/GenAI.RAG.FLARE.Content.Filtering.pdf)  
 
 ## Extra materials
 1. [Vector Database selection & comparison. VectorDB](https://superlinked.com/vector-db-comparison)  
@@ -106,22 +108,25 @@ OpenAI and ChatGPT repo
 16. [Key Phrases Extraction. AI Language. Sentiment Analysis. Extracted Linked Entities](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/AI-Language.md)
 17. [AI Search and Custom Skill using Azure Function](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/AI%20Search%20and%20Custom%20Skills)  
 
-# Semantic Kernel
+
+Semantic Kernel
+----------
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/86d0f7e2-cf7f-4a2c-93a1-a97427498ed0)  
 
-## Semantic Kernel. Knowledge base
+### Semantic Kernel. Knowledge base
 1. [Semantic kernel and AI Assistant](https://devblogs.microsoft.com/semantic-kernel/assistants-a-first-look-into-using-openai-assistants-with-semantic-kernel/)
 2. [Creative Writing Assistant with Semantic Kernel and .Net Aspire](https://devblogs.microsoft.com/semantic-kernel/guest-blog-creative-writing-assistant-a-multi-agent-app-sample-with-semantic-kernel-net-aspire/?ocid=semantic-kernel_eml_tnp_autoid150_title)
 
-## SemanticKernel. Practical part
+### SemanticKernel. Practical part
 1. [Initial Example](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ShortIntentExtraction.cs)
 2. [Interactive Chat with Chat History](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/InteractiveChatFunction.cs)
 3. [Model Switching. Hugging Face](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ModelSwitching_HuggingFaceModel.cs)
 4. [Semantic Function for Conversational Chat](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticFunctionForConversationalChat.cs)
 5. [Semantic Kernel Pipeline](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticKernelPipeline.cs)
 
-# LangChain
+LangChain
+-----------
 ## LangChain using Golang
 1. General Examples (In Progress)
 
