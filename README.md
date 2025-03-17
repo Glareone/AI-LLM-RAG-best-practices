@@ -79,6 +79,7 @@ Theoretical Part
 26. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)
 27. [Run Cognitive Services in Docker](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)
 28. [Deploy Custom Vision on the edge devices (phones) using compact models](https://learn.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model)
+29. [Anomaly Detector for IoT. Univariate Detector (multi-stream)](https://learn.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/overview#univariate-anomaly-detection)  
 
 ### Azure Search & Document Intelligence
 1. [Cognitive Search. Video](https://www.youtube.com/watch?v=5z32NS4IG0w)
