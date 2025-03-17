@@ -78,6 +78,7 @@ Theoretical Part
 25. [Translate speech to text and synthesize the output if needed. Example](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-started-speech-translation?pivots=programming-language-csharp&tabs=macos%2Cterminal)
 26. [AI Speech. Speech Synthesis](https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup)
 27. [Run Cognitive Services in Docker](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)
+28. [Deploy Custom Vision on the edge devices (phones) using compact models](https://learn.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model)
 
 ### Azure Search & Document Intelligence
 1. [Cognitive Search. Video](https://www.youtube.com/watch?v=5z32NS4IG0w)
