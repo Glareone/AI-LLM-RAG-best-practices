@@ -7,3 +7,14 @@ List of Content
    b. [Multi-Agent System Prompt](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)  
 
 ## LangChain vs LangGraph
+
+### LangGraph usage
+```python
+from langgraph.graph import StateGraph
+
+builder = StateGraph(StateType)
+builder.add_node("react_node", react_function)
+builder.add_edge("react_node", decision_node)
+builder.set_entry_point("react_node")
+graph = builder.compile()
+```
