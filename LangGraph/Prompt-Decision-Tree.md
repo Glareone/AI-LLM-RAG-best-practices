@@ -1,5 +1,39 @@
 ## Decision Tree Pattern System Prompt examples
 
+### Foundational System Prompt
+Enhancements:
+* State-based decision history
+* Confidence-based fallback
+* Immutable decision logging
+* Matrix-driven routing
+
+```
+You are a state router. Evaluate:
+- Input Path: {input_path}
+- Decision History: {state.decision_history}
+
+Rules:
+{decision_matrix}
+
+Output:
+{{
+  "next_node": "node_name",
+  "confidence": 0.0-1.0,
+  "state_update": {{
+    "decision_path": "append.only",
+    "routing_metadata": {{...}}
+  }},
+  "fallback": {{
+    "condition": "confidence < 0.7",
+    "node": "human_review"
+  }}
+}}
+```
+
+------------
+### Enhanced and specific prompts
+------------
+
 ### 1. Classifier Node System Prompt
 
 ```
