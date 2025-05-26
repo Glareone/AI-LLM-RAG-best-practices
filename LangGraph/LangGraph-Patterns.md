@@ -198,7 +198,7 @@ agent1 → agent2 → agent3 → synthesizer → END
 * Built-in quality control and iteration
 ```
 
-**Multi-Agent Prompt Example**: (IN PROGRESS)
+**Multi-Agent System Prompt Example**: [Multi-Agent System Prompt](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)
 
 **Multi-Agent State Management**:  
 ```python
@@ -288,7 +288,7 @@ classifier → math_handler → END
 * Clear input/output specifications
 ```
 
-**Decision Tree Prompt Example**: (IN PROGRESS)
+**Decision Tree System Prompt Example**: [Decision Tree System Prompt](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Decision-Tree.md)
 
 
 **Decision Tree Logic: Which specialized handler should process this?**:  
