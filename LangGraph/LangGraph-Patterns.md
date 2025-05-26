@@ -3,8 +3,13 @@
 2. [Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651)
 3. [Alpha-Codium](https://arxiv.org/abs/2401.08500)
 
+### Additonal Content
+1. System Prompt Examples  
+   a. [Decision Tree System Prompt](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Decision-Tree.md)  
+   b. [Multi-Agent System Prompt](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)  
+
 ---------------
-### Modern Patterns to work with LangGraph
+### Modern Pattern Components in LangGraph
 ---------------
 
 1. Flow - How nodes connect and loop
