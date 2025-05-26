@@ -119,8 +119,8 @@ Theoretical Part
 17. [AI Search and Custom Skill using Azure Function](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/AI%20Search%20and%20Custom%20Skills)
 18. Document Intelligence, Best Practices (In progress)
 
-
-Semantic Kernel
+----------
+### Semantic Kernel
 ----------
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/86d0f7e2-cf7f-4a2c-93a1-a97427498ed0)  
@@ -136,10 +136,11 @@ Semantic Kernel
 4. [Semantic Function for Conversational Chat](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticFunctionForConversationalChat.cs)
 5. [Semantic Kernel Pipeline](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticKernelPipeline.cs)
 
-LangChain
 -----------
-## LangChain using Golang
-1. General Examples (In Progress)
+### LangGraph & LangChain
+-----------
+1. LangChain using Golang (In Progress)
+2. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
 
 # General Information
 #### 0: RAG. Cheatsheet
