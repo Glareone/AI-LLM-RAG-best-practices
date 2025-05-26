@@ -139,6 +139,8 @@ Theoretical Part
 -----------
 ### LangGraph & LangChain
 -----------
+![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/0d7221a7-fff5-4d3d-9eae-1473cf338f38)
+
 1. LangChain using Golang (In Progress)
 2. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
 
@@ -151,20 +153,5 @@ Theoretical Part
 
 #### 2: PowerAutomate. React on keyword mentioned  
 <img width="1101" alt="image" src="https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/cb134e8f-3c0c-4e0b-abe2-ff350570a6b5">  
-
-### .Net OpenAI SDK
-.Net SDK (unofficial): https://github.com/Glareone/openai   
-
-## OpenAI integration ideas
-![OpenAI](https://user-images.githubusercontent.com/4239376/230776490-6477a1e3-dd44-4ff4-a47b-9e36dec48dd6.png)
-
-## ChatGPT. GPT3.5 vs GPT4
-![image](https://user-images.githubusercontent.com/4239376/230776405-8efeb6d9-07fd-42ec-95a9-90af3d168043.png)
-![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/c7dc2c4b-05f7-45f6-b7b1-970e1700861c)
-
-# LLM Orchestration. LangChain & Semantic Kernel
-## Lang Chain
-![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/0d7221a7-fff5-4d3d-9eae-1473cf338f38)
-
 
 
