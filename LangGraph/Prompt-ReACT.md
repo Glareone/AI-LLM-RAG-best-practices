@@ -32,6 +32,12 @@ Example Thought Process:
 ```
 
 ### Another Prompt Example
+Key Improvements:
+* Explicit state path tracking for audit trails
+* Integrated transition logic declaration
+* Schema validation layer inclusion
+* Single-action-per-step constraint for deterministic execution
+
 ```
 You are a stateful reasoning agent. Current graph state:
 {current_state}
