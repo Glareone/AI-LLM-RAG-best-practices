@@ -176,10 +176,75 @@ def handle_error(state, error):
 -----------------
 ### 4. Multi-Agent Collaboration
 
+**Multi-Agent Flow**:
 ```
 # Multi-Agent has PARALLEL or SEQUENTIAL agent calls
 agent1 → agent2 → agent3 → synthesizer → END
 ```
+
+**Multi-Agent State Management**:  
+```python
+state = {
+    "agent_results": {
+        "researcher": None,
+        "analyzer": None, 
+        "writer": None
+    },
+    "current_agent": str,
+    "inter_agent_messages": [],  # Communication between agents
+    "shared_context": {},        # Global knowledge base
+    "agent_status": {            # Track which agents are done
+        "researcher": "pending",
+        "analyzer": "waiting", 
+        "writer": "waiting"
+    }
+}
+```
+
+**Multi-Agent Decision Logic: ""Which agent should run next?""**:
+```python
+def route_next_agent(state):
+    # Check dependencies - analyzer needs researcher to finish
+    if state.agent_status["researcher"] == "complete" and \
+       state.agent_status["analyzer"] == "pending":
+        return "analyzer"
+    
+    # Check if all prerequisite agents are done
+    if all_prerequisites_complete(state):
+        return "synthesizer"
+    
+    # Or run agents in parallel
+    return get_next_available_agent(state)
+```
+
+**Multi-Agent Context Handling: Shared knowledge base**:  
+```python
+# Each agent gets:
+# 1. Original user request
+# 2. Results from prerequisite agents
+# 3. Shared context updated by previous agents
+context = {
+    "user_request": original_query,
+    "researcher_findings": state.agent_results["researcher"],
+    "previous_analysis": state.agent_results["analyzer"],
+    "shared_knowledge": state.shared_context
+}
+```
+
+**Multi-Agent Error Handling Strategy: Agent substitution and retry**:  
+```python
+def handle_agent_error(state, failed_agent, error):
+    if failed_agent == "researcher":
+        # Try backup research method or different agent
+        state.agent_status["backup_researcher"] = "active"
+        return "backup_researcher"
+    
+    # Or skip non-critical agent
+    state.agent_status[failed_agent] = "skipped"
+    state.shared_context[f"{failed_agent}_error"] = str(error)
+    return get_next_agent_in_sequence(state)
+```
+
 
 * Different agents with specialized roles work together  
 * Each agent has specific expertise and responsibilities  
