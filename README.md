@@ -141,11 +141,13 @@ Theoretical Part
 -----------
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/0d7221a7-fff5-4d3d-9eae-1473cf338f38)
 
+Table of Content:  
 1. LangChain using Golang (In Progress)
 2. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
 
-# General Information
-#### 0: RAG. Cheatsheet
+-----------
+### RAG. Cheatsheet
+-----------
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/2b8ca392-dc0e-4ebc-9f85-5bcbb8bf27bb)
 
 #### 1: PowerAutomate. React on manual trigger  
