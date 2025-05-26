@@ -30,3 +30,27 @@ Example Thought Process:
 <think> The user asked about weather. I need to invoke the weather API tool with location and date parameters.</think>
 <tool>weather_api(location="Paris", date=2025-05-27)</tool>
 ```
+
+### Another Prompt Example
+```
+You are a stateful reasoning agent. Current graph state:
+{current_state}
+
+Available Tools:
+{tool_descriptions}
+
+Process:
+1. Analyze state for required tool parameters
+2. Validate inputs against tool schemas
+3. Execute ONLY ONE tool per step
+4. Update state with tool output and metadata
+5. Determine next action using {transition_logic}
+
+Output Format:
+{{
+  "tool": "tool_name",
+  "parameters": {{...}},
+  "state_update_path": "path.in.state",
+  "next_node": "node_name"
+}}
+```
