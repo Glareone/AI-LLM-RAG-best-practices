@@ -6,6 +6,14 @@
 ---------------
 ### Modern Patterns to work with LangGraph
 ---------------
+
+1. Flow - How nodes connect and loop
+2. System Prompt - System Prompt example for each Pattern
+3. State Structure - What data you track and how
+4. Logic (Decision Logic) - When to continue/stop/branch
+5. Context Management - What information each node sees
+6. Error Recovery - How failures are handled
+
 ### 1. ReACT Pattern (Reasoning & Acting)
 
 **ReACT Flow**:   
@@ -182,6 +190,16 @@ def handle_error(state, error):
 agent1 → agent2 → agent3 → synthesizer → END
 ```
 
+**Multi-Agent Prompt Recommendations**:
+```
+* Emphasize collaboration and communication
+* Define roles within the team context
+* Include coordination and handoff procedures
+* Built-in quality control and iteration
+```
+
+**Multi-Agent Prompt Example**: (IN PROGRESS)
+
 **Multi-Agent State Management**:  
 ```python
 state = {
@@ -254,6 +272,7 @@ def handle_agent_error(state, failed_agent, error):
 ----------------
 ### 5. Decision Tree Pattern
 
+**Decision-Tree Flow**:
 ```
 # Decision Tree BRANCHES based on input
 classifier → math_handler → END
@@ -261,20 +280,105 @@ classifier → math_handler → END
           → communication_handler → END
 ```
 
+**Decision Tree Recommendations**:
+```
+* Focus on domain expertise and specialization
+* Emphasize independence and completeness
+* Include fallback strategies for edge cases
+* Clear input/output specifications
+```
+
+**Decision Tree Prompt Example**: (IN PROGRESS)
+
+
+**Decision Tree Logic: Which specialized handler should process this?**:  
+```python
+def route_decision(state):
+    classification = state["input_classification"]
+    confidence = state["confidence_scores"].get(classification, 0)
+    
+    # High confidence routing
+    if confidence > 0.8:
+        return classification  # "math", "research", "communication"
+    
+    # Low confidence - try general handler or ask for clarification
+    if confidence < 0.3:
+        return "clarification_handler"
+    
+    # Medium confidence - route but flag for review
+    state["needs_review"] = True
+    return classification
+```
+
+**Decision Tree Context Handling: Specialized Context per handler**:
+```python
+# Math Handler gets:
+context = {
+    "user_input": original_request,
+    "extracted_numbers": parse_numbers(input),
+    "math_operations": identify_operations(input),
+    "calculation_history": []
+}
+
+# Research Handler gets:
+context = {
+    "user_input": original_request,
+    "search_keywords": extract_keywords(input),
+    "research_depth": determine_depth(input),
+    "source_preferences": user_preferences
+}
+
+# Communication Handler gets:
+context = {
+    "user_input": original_request,
+    "recipient_info": extract_recipients(input),
+    "message_type": classify_message_type(input),
+    "urgency_level": assess_urgency(input)
+}
+```
+
+**Decision Tree Error Handling**:
+```python
+def handle_routing_error(state, error):
+    # If classification fails, use keyword-based fallback
+    if "classification_failed" in str(error):
+        fallback_route = keyword_based_routing(state.user_input)
+        state["routing_history"].append(f"fallback_to_{fallback_route}")
+        return fallback_route
+    
+    # If specific handler fails, try general handler
+    if "handler_failed" in str(error):
+        state["handler_context"]["original_error"] = str(error)
+        state["fallback_attempted"] = True
+        return "general_handler"
+    
+    # Last resort - human handoff
+    return "human_handoff"
+```
+
+
 * Route different inputs to specialized handlers  
 * Clean separation of concerns  
 * Easy to extend with new input types  
 * Best for: Chatbots, command processing, workflow automation
 
 -----------------
-### Main Difference Between Modern Approaches
------------------
+### Patterns Comparison
+------------------
 
-1. Control Flow Architecture - How nodes connect and loop
-2. State Structure - What data you track and how
-3. Decision Logic - When to continue/stop/branch
-4. Context Management - What information each node sees
-5. Error Recovery - How failures are handled
+#### Comparison of State Complexity:
 
-The system prompts are just one piece of the difference between patterns.   
-The graph structure and state management are what really differentiate these patterns.   
+* ReACT: Simple accumulative state (observations growing)
+* Plan-Execute: Linear state (plan shrinking, completed growing)
+* Reflection: Versioned state (multiple versions tracked)
+* Multi-Agent: Distributed state (multiple agent results + coordination)
+* Decision Tree: Metadata-heavy state (classification info + routing context)
+
+#### Error Recovery Strategies:
+* ReACT: "Learn from error and continue reasoning"
+* Plan-Execute: "Replan or skip failed step"
+* Reflection: "Use error as feedback for improvement"
+* Multi-Agent: "Replace failed agent or continue without it"
+* Decision Tree: "Fall back to simpler routing or general handler"
+
+Wrap up: The Multi-Agent pattern has the most complex state management because it needs to coordinate between multiple independent agents, while Decision Tree has the most sophisticated routing logic because it needs to handle classification uncertainty and handler failures gracefully.
