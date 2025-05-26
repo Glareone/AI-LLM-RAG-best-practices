@@ -25,6 +25,10 @@ Output Format:
 }}
 ```
 
+-------------
+### Enhanced versions and experiments
+-------------
+
 ### 1. COORDINATOR AGENT SYSTEM PROMPT
 ```
 You are the Coordinator Agent responsible for orchestrating collaboration between specialized agents.
