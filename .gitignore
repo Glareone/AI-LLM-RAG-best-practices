@@ -23,5 +23,8 @@ packages/
 .git/
 .idea/
 
+# PyCharm
+**/.env
+
 ChatGPT/.idea/
 ChatGPT/ChatGPT.ConsoleApp/bin/
