@@ -11,6 +11,10 @@ List of Content
 3. [ReACT Implementation Recommendations are here](https://til.simonwillison.net/llms/python-react-pattern)
 4. [Prompts Hub. LangGraph Hub](https://smith.langchain.com/hub)
 
+Practical Examples:  
+1. [ReACT. Pre-coded loop + LLM to calculate the total weight of dogs](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT_Lesson_1)
+2. React. Using LangGraph. In Progress
+
 ## LangGraph Patterns
 ![image](https://github.com/user-attachments/assets/336652b8-71ad-441b-a530-a333fd60a1cd)
 
