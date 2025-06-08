@@ -30,8 +30,16 @@ graph = builder.compile()
 ![image](https://github.com/user-attachments/assets/75c79161-8868-4938-ac06-d4b2bf8267c9)
 
 ### Difference between pre-coded loop and LangGraph Cycling graph
-The difference is not that big as you may expect. It acts very similar.  
+The difference is not that big as you may expect. It acts very similar:  
 ![image](https://github.com/user-attachments/assets/5b99ab51-00bd-4a0b-9db3-a19e08cd249c)
+
+Reflecting the previous logic we can just use the following image:  
+<img width="667" alt="image" src="https://github.com/user-attachments/assets/1f37bade-665c-4e92-ab77-2d5511f462db" />
+* **Annotated**: Annotated means that the value will not be overriden by the LangGraph, instead the last value will be added to the value list.
+* State Could be simple or complex, depends on your logic
+<img width="650" alt="image" src="https://github.com/user-attachments/assets/dfa1b205-51c0-4d83-805a-72794b233446" />
+
+
 
 ---
 ### Pros and Cons of using LangGraph over pre-coded loop
