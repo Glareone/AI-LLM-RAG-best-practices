@@ -28,4 +28,5 @@ graph = builder.compile()
 ```
 
 ### Simple usecase without LangGraph framework
-![image](https://github.com/user-attachments/assets/91d68fd9-12aa-4435-bd3a-04443e88fbeb)
+![image](https://github.com/user-attachments/assets/75c79161-8868-4938-ac06-d4b2bf8267c9)
+
