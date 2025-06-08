@@ -26,3 +26,6 @@ builder.add_edge("react_node", decision_node)
 builder.set_entry_point("react_node")
 graph = builder.compile()
 ```
+
+### Simple usecase without LangGraph framework
+![image](https://github.com/user-attachments/assets/91d68fd9-12aa-4435-bd3a-04443e88fbeb)
