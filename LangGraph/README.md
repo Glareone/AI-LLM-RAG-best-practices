@@ -33,3 +33,8 @@ graph = builder.compile()
 The difference is not that big as you may expect. It acts very similar.  
 ![image](https://github.com/user-attachments/assets/5b99ab51-00bd-4a0b-9db3-a19e08cd249c)
 
+---
+### Pros and Cons of using LangGraph over pre-coded loop
+PROS:  
+1. Traceability: having quite complex state you can control and understand why it goes this or that way
+2. All-in-one: you have one tool to organize the whole flow which fits your needs. You dont need to mix things up.
