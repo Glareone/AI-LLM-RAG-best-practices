@@ -11,6 +11,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 brew install uv
 ```
 
+### Create virtual environment using uv
+```
+uv venv
+```
+
 ### Install dependencies (creates .venv automatically)
 ```
 uv pip install -r requirements.txt
