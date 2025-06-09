@@ -118,6 +118,7 @@ Theoretical Part
 16. [Key Phrases Extraction. AI Language. Sentiment Analysis. Extracted Linked Entities](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/AI-Language.md)
 17. [AI Search and Custom Skill using Azure Function](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/AI%20Search%20and%20Custom%20Skills)
 18. Document Intelligence, Best Practices (In progress)
+19. [MCP Server example using FastMCP](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/MCPServers/FastMCP-Example)
 
 ----------
 ### Semantic Kernel
