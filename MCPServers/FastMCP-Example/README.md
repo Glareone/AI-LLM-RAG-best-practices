@@ -1,15 +1,39 @@
 # MCP SERVER EXAMPLE USING FASTMCP
 
-Project setup for MacOs:
+Project setup for macOS:
+### Install uv globally (one-time setup)
 ```
-python -m venv env
-source env/bin/activate
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+ or: 
 
 ```
+brew install uv
+```
 
-Run the server:
+### Install dependencies (creates .venv automatically)
+```
+uv pip install -r requirements.txt
+```
+
+### Run the server:
+```
+uv run python mcp_example.py
+```
+
+### Development:
+#### Add new dependencies
 
 ```
-python mcp_example.py
+uv add package-name
+```
+
+#### Add dev dependencies
+```
+uv add --dev pytest black
+```
+
+#### Update dependencies
+```
+uv lock --upgrade
 ```
