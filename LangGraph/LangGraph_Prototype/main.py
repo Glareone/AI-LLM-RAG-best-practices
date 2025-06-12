@@ -5,25 +5,28 @@ from typing import Dict, List, Tuple, Any, TypedDict
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
+# Define state schema for better type safety
+from typing import NotRequired
 
 # Load environment variables
 load_dotenv()
 
 # Initialize the LLM
 llm = ChatOpenAI(
-    model="gpt-3.5-turbo",
-    temperature=0
+    model="gpt-4.1",
+    temperature=0,
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
 # Define state schema for better type safety
 class DocumentState(TypedDict):
-    content: str
-    chunks: List[str]
-    candidate_rules: List[Dict[str, Any]]
-    validated_rules: List[Dict[str, Any]]
-    confidence_score: float
-    iteration_count: int
-    processed: bool
+    content: NotRequired[str] # Made optional to avoid type errors
+    chunks: NotRequired[List[str]]
+    candidate_rules: NotRequired[List[Dict[str, Any]]]
+    validated_rules: NotRequired[List[Dict[str, Any]]]
+    confidence_score: NotRequired[float]
+    iteration_count: NotRequired[int]
+    processed: NotRequired[bool]
 
 # Sample rules (in production, load from your rule database)
 SAMPLE_RULES = [
@@ -264,29 +267,6 @@ app = workflow.compile()
 def main():
     # Example file path
     file_path = Path("data/example.txt")
-    
-    if not file_path.exists():
-        # Create sample document for testing
-        os.makedirs("data", exist_ok=True)
-        sample_content = """
-        Customer Identification Document
-        
-        This document contains the identification information for customer John Doe.
-        Customer ID: 12345
-        Risk assessment has been completed for this customer.
-        
-        Financial Information:
-        Amount: $50,000 USD
-        Transaction type: Wire transfer
-        
-        The risk evaluation indicates medium risk level based on transaction history and customer profile analysis.
-        """
-        
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(sample_content)
-        print(f"Created sample document at {file_path}")
-    
-    # Read the file
     content = read_file(str(file_path))
     
     # Initialize the state

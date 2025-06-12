@@ -1,0 +1,20 @@
+[
+    {
+        "id": "R001",
+        "description": "Document must contain customer identification information",
+        "keywords": ["customer", "identification", "ID", "identity"],
+        "category": "compliance"
+    },
+    {
+        "id": "R002",
+        "description": "Financial amounts must be clearly stated with currency",
+        "keywords": ["amount", "currency", "$", "USD", "EUR"],
+        "category": "financial"
+    },
+    {
+        "id": "R003",
+        "description": "Risk assessment documentation required",
+        "keywords": ["risk", "assessment", "evaluation", "analysis"],
+        "category": "risk_management"
+    }
+]

@@ -1,2 +1,11 @@
-This is a sample text file for testing our LangGraph application.
-It contains some example content that we can process using the ReAct pattern. 
+Customer Identification Document
+        
+This document contains the identification information for customer John Doe.
+Customer ID: 12345
+Risk assessment has been completed for this customer.
+        
+Financial Information:
+ Amount: $50,000 USD
+ Transaction type: Wire transfer
+
+The risk evaluation indicates medium risk level based on transaction history and customer profile analysis.
