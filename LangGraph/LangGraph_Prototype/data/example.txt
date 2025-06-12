@@ -1,0 +1,2 @@
+This is a sample text file for testing our LangGraph application.
+It contains some example content that we can process using the ReAct pattern. 
