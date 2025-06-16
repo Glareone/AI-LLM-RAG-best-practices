@@ -6,3 +6,4 @@ It's working using Conda3 environment, I named mine "deeplearning-ai".
 That's why requirements.txt is not used and empty.
 
 
+[image](./Screenshot%202025-06-16%20at%2023.04.49.png)
