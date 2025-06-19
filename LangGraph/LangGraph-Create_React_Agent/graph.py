@@ -1,4 +1,4 @@
-from xmlrpc.client import DateTime
+import os
 
 from langgraph.prebuilt import create_react_agent
 from langchain.chat_models import init_chat_model
@@ -7,12 +7,14 @@ from langchain_tavily import TavilySearch
 from langchain_core.tools import tool
 import asyncio
 from datetime import datetime
+from os import getenv
 
 ## Define the Tavily search tool
 tavily_search_tool = TavilySearch(
     max_results=5,
     timeout=10,
     search_depth="basic",
+    tavily_api_key=os.getenv('TAVILY_API_KEY')
 )
 
 # Wrap the Tavily search tool in a tool decorator and make it asynchronous
