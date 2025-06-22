@@ -1,0 +1,14 @@
+[project]
+name = "first-experiment"
+version = "0.1.0"
+description = "first langchain experiments to test the pipeline"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "langchain>=0.3.26",
+    "langchain-core>=0.3.66",
+    "langchain-openai>=0.3.24",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.1.0",
+]
