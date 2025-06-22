@@ -184,7 +184,7 @@ def sync_execute_chain_with_pydantic_format() -> Optional[AIMessage]:
     """Sync example with Pydantic output parser"""
     # Simple prompt template
     prompt: ChatPromptTemplate = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that provides concise answers."),
+        ("system", "You are a helpful assistant that provides concise answers. Respond with JSON: {format_instructions}"),
         ("human", "Explain {topic} in simple terms.")
     ])
 
@@ -223,7 +223,7 @@ def sync_execute_chain_with_pydantic_format() -> Optional[AIMessage]:
         return None
 
 async def main():
-    """Main function to run all examples"""
+    """Main function to run all examples, sync and async"""
     print("LangChain Pipeline Examples")
     print("Make sure to set OPENAI_API_KEY in your .env file")
 
