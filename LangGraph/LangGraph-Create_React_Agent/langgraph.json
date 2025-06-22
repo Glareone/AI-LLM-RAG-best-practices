@@ -1,0 +1,5 @@
+{
+  "project": "LangGraph-Create_React_Agent",
+  "language": "python",
+  "dependencies": "requirements.txt"
+}
