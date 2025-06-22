@@ -144,7 +144,11 @@ Theoretical Part
 
 Table of Content:  
 1. LangChain using Golang (In Progress)
-2. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
+2. [LangChain. Demo examples wiht pipelines](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/Langchain/first-experiment)
+3. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
+4. [ReACT. Pre-coded loop + LLM to calculate the total weight of dogs](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT_Lesson_1)
+5. [React. Using LangGraph. In Progress](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT-Lab2-LangGraph)
+6. [React. Simple LangGraph Prototype](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/LangGraph_Prototype)
 
 -----------
 ### RAG. Cheatsheet
