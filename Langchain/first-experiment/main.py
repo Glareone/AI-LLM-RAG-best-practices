@@ -1,106 +1,21 @@
 import os
 import asyncio
-from typing import List, Optional, Any
+from typing import Optional
 from dotenv import load_dotenv
 from langchain_core.messages import AIMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.exceptions import OutputParserException
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
-from pydantic import BaseModel, Field
+
+from src.langchain_pipelines import create_person_analysis_pipeline, create_product_recommendation_pipeline
+from src.output import SimpleExplanation
 
 load_dotenv()
 
-# Step 3: Define Pydantic models for structured output
-class PersonAnalysis(BaseModel):
-    """PYDANTIC: Analysis of a person's characteristics for pydantic output"""
-    name: str = Field(description="Person's name")
-    age_estimate: Optional[int] = Field(description="Estimated age range", ge=0, le=120)
-    profession: Optional[str] = Field(description="Likely profession or role")
-    personality_traits: List[str] = Field(description="Key personality traits identified")
-    confidence_score: float = Field(description="Confidence in analysis (0-1)", ge=0, le=1)
-
-class ProductRecommendation(BaseModel):
-    """PYDANTIC: Product recommendation based on user preferences for pydantic output"""
-    product_name: str = Field(description="Name of the recommended product")
-    category: str = Field(description="Product category")
-    price_range: str = Field(description="Expected price range")
-    reason: str = Field(description="Why this product is recommended")
-    alternatives: List[str] = Field(description="Alternative product suggestions")
-
-class SimpleExplanation(BaseModel):
-    """PYDANTIC: A simple explanation model for pydantic output"""
-    topic: str = Field(description="The topic being explained")
-    explanation: str = Field(description="Simple explanation of the topic")
-    key_points: List[str] = Field(description="3-5 key points about the topic")
-    difficulty_level: str = Field(description="Difficulty level: beginner, intermediate, or advanced")
-
-def create_person_analysis_pipeline():
-    """Creates a pipeline for analyzing person descriptions"""
-
-    # Step 1: Create prompt template
-    prompt_template = ChatPromptTemplate.from_messages([
-        ("system", """You are an expert human behavior analyst. 
-        Analyze the given person description and provide insights about their characteristics.
-
-        Context: {context}
-        Analysis Focus: {focus_area}
-
-        {format_instructions}"""),
-        ("human", "Please analyze this person: {person_description}")
-    ])
-
-    # Step 2: Initialize the LLM
-    llm = ChatOpenAI(
-        model="gpt-4o",
-        temperature=0.3,
-        api_key=os.getenv("OPENAI_API_KEY")
-    )
-
-    # Step 3: Create output parser
-    output_parser = PydanticOutputParser(pydantic_object=PersonAnalysis)
-
-    # Create the chain
-    chain = prompt_template | llm | output_parser
-
-    return chain, output_parser
-
-
-def create_product_recommendation_pipeline():
-    """Creates a pipeline for product recommendations"""
-
-    # Step 1: Create prompt template
-    prompt_template = ChatPromptTemplate.from_messages([
-        ("system", """You are a product recommendation expert.
-        Based on the user's preferences and requirements, suggest the best product.
-
-        Budget Range: {budget}
-        User Type: {user_type}
-        Special Requirements: {requirements}
-
-        {format_instructions}"""),
-        ("human", "I'm looking for: {product_query}")
-    ])
-
-    # Step 2: Initialize the LLM
-    llm = ChatOpenAI(
-        model="gpt-3.5-turbo",
-        temperature=0.5,
-        api_key=os.getenv("OPENAI_API_KEY")
-    )
-
-    # Step 3: Create output parser
-    output_parser = PydanticOutputParser(pydantic_object=ProductRecommendation)
-
-    # Create the chain
-    chain = prompt_template | llm | output_parser
-
-    return chain, output_parser
-
-
 async def run_person_analysis_example():
     """Example of running the person analysis pipeline"""
-    print("=== CASE 1. Person Analysis Pipeline ===")
+    print("=== CASE 1. Person Analysis Pipeline ===. Example of running the person analysis pipeline")
 
     chain, parser = create_person_analysis_pipeline()
 
@@ -122,6 +37,7 @@ async def run_person_analysis_example():
     except Exception as e:
         print(f"❌ Execution Failed. Error in person analysis: {e}")
 
+# Return result only for demonstration purposes to specify the return type in the function signature
 # ✅ CORRECT: Annotate the actual return value, not the coroutine wrapper
 # ❌ WRONG: Don't include Coroutine/Awaitable in the annotation
 async def run_product_recommendation_example() -> Optional[AIMessage]:
