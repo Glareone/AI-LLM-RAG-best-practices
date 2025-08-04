@@ -130,7 +130,7 @@ Theoretical Part
     d. Rank-Biased Precision (RBP) - Early result weighting strategies  
     e. Embedding Quality Metrics - Intra-cluster vs inter-cluster distance analysis
 2. Response Quality Metrics   
-    a. BLEU Score - N-gram overlap evaluation (you mentioned this)  
+    a. BLEU Score - N-gram overlap evaluation   
     b. ROUGE (L/1/2) - Recall-oriented summarization metrics  
     c. BERTScore - Semantic similarity using contextualized embeddings  
     d. BLEURT - BERT-based learned evaluation metric  
@@ -145,7 +145,7 @@ Theoretical Part
 
 ### 2. Advanced ML Architecture & Training
 1. Neural Network Fundamentals   
-    a. ReLU vs Advanced Activations (GELU, Swish/SiLU) - You mentioned ReLU  
+    a. ReLU vs Advanced Activations (GELU, Swish/SiLU)
     b. Layer Normalization vs Batch Normalization - Training stability techniques  
     c. Gradient Clipping - Exploding gradient prevention  
     d. Mixed Precision Training - FP16/BF16 memory optimization  
