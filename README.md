@@ -120,26 +120,144 @@ Theoretical Part
 18. Document Intelligence, Best Practices (In progress)
 19. [MCP Server example using FastMCP](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/MCPServers/FastMCP-Example)
 
-----------
-### Semantic Kernel
-----------
+---
+## Advanced Topics. Theory.
+### 1. Advanced Evaluation Metrics & Methodologies
+1. Document Retrieval Metrics  
+    a. NDCG@K (Normalized Discounted Cumulative Gain) - Ranking quality with relevance grades  
+    b. Mean Reciprocal Rank (MRR) - First relevant document positioning  
+    c. Expected Reciprocal Rank (ERR) - User behavior modeling with graded relevance  
+    d. Rank-Biased Precision (RBP) - Early result weighting strategies  
+    e. Embedding Quality Metrics - Intra-cluster vs inter-cluster distance analysis
+2. Response Quality Metrics   
+    a. BLEU Score - N-gram overlap evaluation (you mentioned this)  
+    b. ROUGE (L/1/2) - Recall-oriented summarization metrics  
+    c. BERTScore - Semantic similarity using contextualized embeddings  
+    d. BLEURT - BERT-based learned evaluation metric  
+    e. SacreBLEU - Standardized BLEU with proper tokenization  
+    f. METEOR - Synonym and paraphrase consideration  
+    g. CIDEr - Consensus-based evaluation  
+    h. CHRF - Character-level F-score for multilingual evaluation  
+3. Human-Correlation Metrics   
+    a.  Preference-Based Ranking - Win/loss ratios in A/B testing  
+    b. Pearson/Spearman Correlation - Human judge alignment  
+    c. Likert Scale Rating Systems - Multi-point evaluation frameworks
+
+### 2. Advanced ML Architecture & Training
+1. Neural Network Fundamentals   
+    a. ReLU vs Advanced Activations (GELU, Swish/SiLU) - You mentioned ReLU  
+    b. Layer Normalization vs Batch Normalization - Training stability techniques  
+    c. Gradient Clipping - Exploding gradient prevention  
+    d. Mixed Precision Training - FP16/BF16 memory optimization  
+2. CNN Advanced Concepts  
+    a. Kernel Size Impact - Local vs global feature extraction (3x3 vs 7x7)
+    b. Parameter Sharing Benefits - Translation invariance principles
+    c. Hierarchical Feature Learning - Low-level to high-level progression
+    d. CNN vs MLP Scalability - O(k×c×f) vs O(n×m) parameter complexity
+3. Advanced Training Techniques  
+    a. Learning Rate Scheduling - Cosine annealing, linear decay  
+    b. Warmup Steps - Training stability (10% of total steps)  
+    c. Checkpoint Averaging - Model stability improvement  
+    d. Gradient Accumulation - Simulating larger batch sizes  
+
+### 3. Parameter-Efficient Fine-tuning (PEFT)
+1. LoRA (Low-Rank Adaptation)  
+    a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
+    b. Alpha Scaling Factor - Typically 16-32  
+    c. Target Module Selection - Query, value, key, output projections  
+    d. AdaLoRA - Adaptive rank allocation  
+    e. QLoRA - 4-bit quantized LoRA for memory efficiency  
+2. Training Parameters  
+    a. Learning Rate Ranges - 1e-5 to 5e-4 for LLMs with warmup  
+    b. Batch Size Optimization - 8-32 full fine-tuning, 64-128 LoRA  
+    c. Sequence Length Limits - 512-4096 tokens task dependency  
+    d. Weight Decay (L2 Regularization) - λ||w||² with λ = 1e-4 to 1e-2  
+
+### 4. Advanced Retrieval & Re-ranking
+1. Re-ranking Algorithms  
+    a. Reciprocal Rank Fusion (RRF) - RRF_score = Σ(1/(k + rank_i))  
+    b. Cross-encoder vs Bi-encoder - Accuracy vs speed trade-offs  
+    c. Neural Re-rankers - BERT/T5-based cross-attention models  
+    d. Learning to Rank (LTR) - ML-based ranking optimization  
+    e. Score Normalization Techniques - Min-max, z-score, sigmoid   
+
+2. Advanced Retrieval Concepts  
+    a. Semantic Similarity Scoring - Cosine similarity between embeddings  
+    b. Context Preservation - Chunk coherence maintenance  
+    c. Window Size Optimization - Re-ranking candidate selection (100-1000)  
+
+### 5. MLOps & Production Platforms
+1. Evaluation Platforms  
+    a. AI Foundry (Microsoft) - Model testing and evaluation  
+    b. Weights & Biases (W&B) - Experiment tracking  
+    c. Neptune.ai - MLOps platform capabilities  
+    d. LangSmith (LangChain) - LLM application testing  
+    e. Phoenix (Arize AI) - LLM observability and evaluation  
+
+2. Model Management  
+    a. MLFlow - Model lifecycle management  
+    b. DVC (Data Version Control) - Data and model versioning  
+    c. BentoML - Model serving framework architecture  
+
+### 6. Advanced LLM Framework Architectures
+1. LangGraph (Advanced over LangChain)  
+    a. State Management - Persistent conversation state
+    b. Graph Architecture - Nodes and edges for complex workflows  
+    c. Conditional Routing - Dynamic flow based on LLM decisions  
+    d. Human-in-the-Loop - Approval gates and manual interventions  
+    e. Parallel Processing - Concurrent graph branch execution  
+2. Semantic Kernel (Microsoft)  
+    a. Kernel Architecture - Central orchestration engine  
+    b. Plugin System - Reusable functions (native C# or prompt-based)  
+    c. Planners - Automatic workflow generation  
+    d. Memory Management - Vector-based semantic memory patterns  
+3. Advanced Framework Concepts  
+    a. Multi-Agent Systems - Collaborative AI agent coordination  
+    b. Error Recovery Strategies - Retry logic, fallback mechanisms  
+    c. Async Execution - Resource management at scale  
+
+### 7. Structured Output & Schema Design
+1. Pydantic Advanced Usage  
+    a. Field Validation - Custom validators, constraints (min/max, regex)  
+    b. JSON Schema Generation - Automatic API documentation  
+    c. Error Handling - Detailed validation error message design  
+    d. Schema Compliance Monitoring - Production tracking metrics  
+2. Best Practices  
+    a. Schema Complexity vs Success Rates - Optimization strategies  
+    b. Retry Logic Implementation - Parse failure handling  
+    c. Validation Feedback Loops - Error correction workflows  
+
+### 8. Massive Parallel Training (Enterprise Scale)  
+1. Distributed Training Strategies  
+    a. Data Parallelism - Batch distribution across GPUs  
+    b. Model Parallelism - Layer splitting across devices  
+    c. Pipeline Parallelism - Sequential processing stages  
+    d. Gradient Synchronization - AllReduce, parameter servers  
+    e. Mixed Precision Training - Memory efficiency optimization  
+
+### 9. Advanced Overfitting Prevention  
+1. Regularization Techniques  
+    a. Early Stopping - Validation loss plateau detection  
+    b. Dropout Rates - 0.1-0.3 optimal ranges  
+    c. Training/Validation Loss Curves - Overfitting gap analysis  
+    d. Cross-validation Strategies - 5-10 fold robust evaluation     
+---
+### Advanced Topics. Practice. Semantic Kernel
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/86d0f7e2-cf7f-4a2c-93a1-a97427498ed0)  
 
-### Semantic Kernel. Knowledge base
+### Advanced Topics. Practice. Semantic Kernel Knowledge base
 1. [Semantic kernel and AI Assistant](https://devblogs.microsoft.com/semantic-kernel/assistants-a-first-look-into-using-openai-assistants-with-semantic-kernel/)
 2. [Creative Writing Assistant with Semantic Kernel and .Net Aspire](https://devblogs.microsoft.com/semantic-kernel/guest-blog-creative-writing-assistant-a-multi-agent-app-sample-with-semantic-kernel-net-aspire/?ocid=semantic-kernel_eml_tnp_autoid150_title)
 
-### SemanticKernel. Practical part
+### Advanced Topics. Practice. SemanticKernel.
 1. [Initial Example](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ShortIntentExtraction.cs)
 2. [Interactive Chat with Chat History](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/InteractiveChatFunction.cs)
 3. [Model Switching. Hugging Face](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ModelSwitching_HuggingFaceModel.cs)
 4. [Semantic Function for Conversational Chat](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticFunctionForConversationalChat.cs)
 5. [Semantic Kernel Pipeline](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticKernelPipeline.cs)
-
------------
-### LangGraph & LangChain
------------
+---
+### Advanced Topics. Practice. LangGraph & LangChain
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/0d7221a7-fff5-4d3d-9eae-1473cf338f38)
 
 Table of Content:  
