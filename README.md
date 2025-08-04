@@ -123,13 +123,13 @@ Theoretical Part
 ---
 ## Advanced Topics. Theory.
 ### 1. Advanced Evaluation Metrics & Methodologies
-1. Document Retrieval Metrics  
+1. [Document Retrieval Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/advanced-topics)  
     a. NDCG@K (Normalized Discounted Cumulative Gain) - Ranking quality with relevance grades  
     b. Mean Reciprocal Rank (MRR) - First relevant document positioning  
     c. Expected Reciprocal Rank (ERR) - User behavior modeling with graded relevance  
     d. Rank-Biased Precision (RBP) - Early result weighting strategies  
     e. Embedding Quality Metrics - Intra-cluster vs inter-cluster distance analysis
-2. Response Quality Metrics   
+2. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)   
     a. BLEU Score - N-gram overlap evaluation   
     b. ROUGE (L/1/2) - Recall-oriented summarization metrics  
     c. BERTScore - Semantic similarity using contextualized embeddings  
