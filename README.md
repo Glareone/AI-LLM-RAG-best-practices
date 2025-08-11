@@ -19,10 +19,20 @@ My Workshops and Posts
 14. Crew.AI. Agents in LLM Applications (In Progress)
 15. Pydantic data classes and how to manage the output format (In Progress)
 16. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
-17. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
-18. Table extraction in RAG systems (In Progress)
-19. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
-20. Misjudgements using LogProbs (In Progress)
+17. Crawlers for LLMs:
+    - https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ ,
+    - https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f,
+    - https://github.com/Skyvern-AI/skyvern,
+    - https://gotenberg.dev/docs/routes,
+    - https://jina.ai/reader,
+    - https://github.com/unclecode/crawl4ai,
+    - https://crawlee.dev/,
+    - https://github.com/bracesproul/site-rag/,
+    - https://www.firecrawl.dev,
+    - https://github.com/mishushakov/llm-scraper
+19. Table extraction in RAG systems (In Progress)
+20. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
+21. Misjudgements using LogProbs (In Progress)
 
 ### My Workshops
 1. [June 2023. My Workshop Presentation. Run 1.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/11951964/Workshop.Introduction.pptx)  
