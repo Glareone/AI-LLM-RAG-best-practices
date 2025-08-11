@@ -160,7 +160,7 @@ Theoretical Part
     c. Checkpoint Averaging - Model stability improvement  
     d. Gradient Accumulation - Simulating larger batch sizes  
 
-### 3. Parameter-Efficient Fine-tuning (PEFT)
+#### 3. Parameter-Efficient Fine-tuning (PEFT)
 1. LoRA (Low-Rank Adaptation)  
     a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
     b. Alpha Scaling Factor - Typically 16-32  
@@ -173,15 +173,15 @@ Theoretical Part
     c. Sequence Length Limits - 512-4096 tokens task dependency  
     d. Weight Decay (L2 Regularization) - λ||w||² with λ = 1e-4 to 1e-2  
 
-### 4. Advanced Retrieval & Re-ranking
-1. Re-ranking Algorithms  
+#### 4. Advanced Retrieval & Re-ranking
+1. [Re-ranking Algorithms](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Advanced%20Retrieval%20&%20Re-ranking.md)   
     a. Reciprocal Rank Fusion (RRF) - RRF_score = Σ(1/(k + rank_i))  
     b. Cross-encoder vs Bi-encoder - Accuracy vs speed trade-offs  
     c. Neural Re-rankers - BERT/T5-based cross-attention models  
     d. Learning to Rank (LTR) - ML-based ranking optimization  
     e. Score Normalization Techniques - Min-max, z-score, sigmoid   
 
-2. Advanced Retrieval Concepts  
+2. [Advanced Retrieval Concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Advanced%20Retrieval%20&%20Re-ranking.md)  
     a. Semantic Similarity Scoring - Cosine similarity between embeddings  
     b. Context Preservation - Chunk coherence maintenance  
     c. Window Size Optimization - Re-ranking candidate selection (100-1000)  
