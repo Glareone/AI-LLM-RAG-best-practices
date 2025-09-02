@@ -193,6 +193,14 @@ def ensemble_g_eval(text, criteria):
 | BERTScore | Semantic evaluation, paraphrasing | Computationally heavier | 0.93 (Excellent) | ⚡️⚡️ | ⚠️ Limited | $$ |
 | G-Eval | Complex reasoning, creativity | Expensive, variable | 0.85+ (Excellent) | ⚡️ | ✅ Excellent | $$$ |
 
+Cost-Performance Trade-off Guide:
+| Budget for Evaluations | Recommended Strategy | Expected Accuracy | 
+| ---------------------- | -------------------- | ----------------- |
+| 💵 Very limited Budget (< $0.001/eval)    | BLEU + ROUGE screening | 70-75% correlation | 
+| 💵💵 Average Budget ($0.01/eval) | BERTScore primary | 85-90% correlation | 
+| 💵💵💵💵💵💵 High ($0.05/eval) | BERTScore + G-Eval | 90-95% correlation | 
+| 💵💵💵💵💵💵💵💵💵💵💵💵 Top/Premium ($0.10+/eval) | Multi-judge G-Eval | 95%+ correlation |
+
 ### LangWatch. What's supported out of the box
 LangWatch offers an extensive library of evaluators to help you evaluate the quality and guarantee the safety of your LLM apps, including:
 * Built-in evaluators for RAG systems, guardrails, and safety  
