@@ -139,11 +139,12 @@ Theoretical Part
     c. Expected Reciprocal Rank (ERR) - User behavior modeling with graded relevance  
     d. Rank-Biased Precision (RBP) - Early result weighting strategies  
     e. Embedding Quality Metrics - Intra-cluster vs inter-cluster distance analysis
-2. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)
+2. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     a. [F1, Recall, Precision. Fundamental metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Fundamental%20Metrics%20F1%20Precision%20Recall.md)   
-    b. BLEU Score - N-gram overlap evaluation   
-    c. ROUGE (L/1/2) - Recall-oriented summarization metrics  
-    d. BERTScore - Semantic similarity using contextualized embeddings
+    b. [BLEU Score - N-gram overlap evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)   
+    c. [ROUGE (L/1/2) - Recall-oriented summarization metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    d. [G-Eval (LLM as a judge) - Sophisticated evaluation framework that uses LLMs themselves to evaluate outputs based on detailed criteria.](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    d. [BERTScore - Semantic similarity using contextualized embeddings](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     e. BLEURT - BERT-based learned evaluation metric  
     f. SacreBLEU - Standardized BLEU with proper tokenization  
     g. METEOR - Synonym and paraphrase consideration  
