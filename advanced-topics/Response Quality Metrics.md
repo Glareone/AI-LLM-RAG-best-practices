@@ -188,8 +188,8 @@ def ensemble_g_eval(text, criteria):
 
 | Metric | Best For | Limitations | Correlation with Humans | Speed | Reasoning Evaluation | Cost |
 | -----  | -------  | ----------  | ----------------------- | ----- | -------------------- | ---- |
-| BLEU Exact | matching, translation | No semantic understanding | 0.70 (Good) | ⚡️⚡️⚡️ | ❌ Poor | $ |
-| ROUGE | Summarization, content coverage | Surface-level matching | 0.78 (Good) | ⚡️⚡️⚡️ | ❌ Poor | $ |
+| BLEU   | Exact matching, translation | No semantic understanding | 0.70 (Good) | ⚡️⚡️⚡️ | ❌ Poor | $ |
+| ROUGE  | Summarization, content coverage | Surface-level matching | 0.78 (Good) | ⚡️⚡️⚡️ | ❌ Poor | $ |
 | BERTScore | Semantic evaluation, paraphrasing | Computationally heavier | 0.93 (Excellent) | ⚡️⚡️ | ⚠️ Limited | $$ |
 | G-Eval | Complex reasoning, creativity | Expensive, variable | 0.85+ (Excellent) | ⚡️ | ✅ Excellent | $$$ |
 
