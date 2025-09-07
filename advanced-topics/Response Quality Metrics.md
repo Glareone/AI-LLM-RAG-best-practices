@@ -160,6 +160,9 @@ Provide detailed reasoning for each score.
 
 ##### Advanced Real-world use case. #####
 # Multi-judge consensus for reliability
+```
+
+```python
 def ensemble_g_eval(text, criteria):
     judges = ["gpt-4o", "claude-3.5-sonnet", "gemini-pro"]
     scores = []
@@ -174,7 +177,9 @@ def ensemble_g_eval(text, criteria):
         "std_dev": np.std(scores),
         "confidence": calculate_inter_judge_reliability(scores)
     }
+```
 
+```
 💵 Cost: $0.01-0.10 per evaluation vs $0.0001 for traditional metrics
 ⏱️ Latency: 2-5 seconds vs milliseconds for other metrics
 🎲 Variability: Same input might get slightly different scores
