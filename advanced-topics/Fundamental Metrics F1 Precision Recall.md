@@ -11,7 +11,7 @@
 |              |             |             |             |
 |  ----------- | ----------- | ----------- | ----------- |
 |              |             |             |   ACTUAL    |
-|  PREDICRED   | Positive    | TP          |   FP        |
+|  PREDICTED   | Positive    | TP          |   FP        |
 |              | Negative    | FN          |   TN        |
 
 - TP (True Positives): Correctly identified positive cases
@@ -40,8 +40,8 @@ F1 = 2 × (Precision × Recall) / (Precision + Recall)
 ---
 ### Q&A Section
 
-Q1: Are P/R/F1 everywhere? Are they universal?  
-A1: Yes, they are absolutely universal! These three metrics appear in:
+**Q1: Are P/R/F1 everywhere? Are they universal?**   
+A1: Yes, they are absolutely universal! These three metrics appear in:  
 
 1️⃣ Google Search (how good are search results?)  
 2️⃣ Medical diagnosis (cancer detection accuracy)  
@@ -49,8 +49,8 @@ A1: Yes, they are absolutely universal! These three metrics appear in:
 4️⃣ Netflix recommendations (suggest movies you'll actually like)  
 5️⃣ AI model evaluation (assess language model performance)  
 
-Q2: What the difference between precision and Recall? Their formulas look similar.
-A2: Both are indeed "success rate" calculations, but they're measuring success against different denominators:
+**Q2: What the difference between precision and Recall? Their formulas look similar.**  
+A2: Both are indeed "success rate" calculations, but they're measuring success against different denominators:  
 - Precision: Correct Predictions / Total Predictions Made. Precision: `"Of My Predictions, How Many Were Right?"`  
 - Recall: Correct Detections / Total Things That Actually Exist. `"Of All Real Cases, How Many Did I Find?"`  
 
