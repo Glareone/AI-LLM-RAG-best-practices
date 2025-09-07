@@ -123,6 +123,7 @@ PREDICTED Cancer   80      40      (TP=80, FP=40)
 
 3️⃣ F1 = 2 × (0.667 × 0.80) / (0.667 + 0.80) = 2 × 0.534 / 1.467 = 0.727 (72.7%)  
 "My balanced diagnostic performance is 72.7%"  
+
 ---
 
 #### F1/P/R for BERTScore
