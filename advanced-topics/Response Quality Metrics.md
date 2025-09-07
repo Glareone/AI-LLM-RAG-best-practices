@@ -1,4 +1,9 @@
 ## Advanced Evaluation Metrics & Methodologies
+1️⃣ BLUE - N-gram overlap evaluation  
+2️⃣ ROGUE - Recall-oriented summarization metrics  
+3️⃣ BERTScore - Semantic similarity using contextualized embeddings  
+4️⃣ G-Eval - LLM-as-judge approach, best for complex reasoning  
+
 ### Response Quality Metrics
 1. BLEU Score - N-gram overlap evaluation.  
 ```
@@ -118,7 +123,7 @@ def smart_evaluation_pipeline(generated, reference):
         return evaluate_with_llm_judge(generated, reference)
 ```
 
-4. G-Eval
+4. G-Eval - LLM-as-judge approach, best for complex reasoning.
 ```
 G-Eval - LLM-as-judge approach, best for complex reasoning.
 Sophisticated evaluation framework that uses LLMs themselves to evaluate outputs based on detailed criteria, specifically designed to assess reasoning, creativity, and nuanced quality aspects.
