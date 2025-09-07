@@ -100,6 +100,30 @@ Harmonic Mean (F1) = 2 × (0.9 × 0.1) / (0.9 + 0.1) = 0.18/1.0 = 0.18
 F1 punishes the low recall! ✅
 ```
 ---
+### EXAMPLE 2.
+Medical Cancer Screening  
+Scenario: Testing 1000 patients for cancer  
+
+- 100 patients actually have cancer
+- Your test flags 120 patients as having cancer
+- Of those 120 flagged, 80 actually have cancer
+  
+**Step 1: Build the Confusion Matrix**  
+                    ACTUAL
+                 Cancer  No Cancer
+PREDICTED Cancer   80      40      (TP=80, FP=40)
+       No Cancer   20     860      (FN=20, TN=860)
+  
+**Step 2: Calculate Each Metric**  
+1️⃣ Precision = TP / (TP + FP) = 80 / (80 + 40) = 80/120 = 0.667 (66.7%)  
+"Of patients I flagged as having cancer, 66.7% actually have it"  
+
+2️⃣ Recall = TP / (TP + FN) = 80 / (80 + 20) = 80/100 = 0.80 (80%)  
+"I detected 80% of all actual cancer cases"  
+
+3️⃣ F1 = 2 × (0.667 × 0.80) / (0.667 + 0.80) = 2 × 0.534 / 1.467 = 0.727 (72.7%)  
+"My balanced diagnostic performance is 72.7%"  
+---
 
 #### F1/P/R for BERTScore
 1️⃣ F1 Score - Your primary metric (balanced view)  
