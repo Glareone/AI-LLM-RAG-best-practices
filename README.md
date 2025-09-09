@@ -252,7 +252,12 @@ Theoretical Part
     a. Early Stopping - Validation loss plateau detection  
     b. Dropout Rates - 0.1-0.3 optimal ranges  
     c. Training/Validation Loss Curves - Overfitting gap analysis  
-    d. Cross-validation Strategies - 5-10 fold robust evaluation     
+    d. Cross-validation Strategies - 5-10 fold robust evaluation
+
+---
+
+### LangWatch vs LangFuse vs AI Foundry for SemanticKernel
+1. [LangWatch vs LangFuse vs AI Foundry comparison](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangWatch/LangWatch%20And%20LangFuse.md)
 ---
 ### Advanced Topics. Practice. Semantic Kernel
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
