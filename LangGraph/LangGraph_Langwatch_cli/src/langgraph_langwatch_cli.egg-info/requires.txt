@@ -1,0 +1,13 @@
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langwatch>=0.1.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+typing-extensions>=4.8.0
+
+[dev]
+pytest>=7.0.0
+pytest-cov>=4.0.0
+ruff>=0.1.0
+mypy>=1.0.0
