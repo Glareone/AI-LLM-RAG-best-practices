@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: langgraph-langwatch-cli
+Version: 0.1.0
+Summary: LangGraph application with LangWatch monitoring investigation
+Author-email: Aleksei Kolesnikov <kolesnikov.aliaksei@gmail.com>
+Project-URL: Homepage, https://github.com/glareone
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: langgraph>=0.2.0
+Requires-Dist: langchain-core>=0.3.0
+Requires-Dist: langchain-openai>=0.2.0
+Requires-Dist: langwatch>=0.1.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: typing-extensions>=4.8.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+
+# LangGraph + LangWatch Investigation Project
+
+This project explores LangGraph capabilities for building AI agent applications and demonstrates application behavior tracking using LangWatch CLI (running locally).
+
+## Project Goals
+
+- **LangGraph Investigation**: Explore LangGraph's features for building complex multi-agent workflows
+- **LangWatch Integration**: Implement local tracking and monitoring of agent behaviors
+- **Best Practices**: Follow AI agent development principles and patterns
+
+## Project Structure
+
+- `src/` - Main application source code
+- `agents/` - Individual agent implementations
+- `workflows/` - LangGraph workflow definitions
+- `monitoring/` - LangWatch integration and tracking
+- `examples/` - Sample implementations and use cases
+
+## Technology Stack
+
+- **LangGraph**: Multi-agent workflow framework
+- **LangWatch**: Local application monitoring and tracking
+- **Python 3.12**: Core runtime
+- **UV**: Package management and virtual environment
+
+## Development Setup
+
+1. Ensure Python 3.12 and UV are installed
+2. Virtual environment is already created: `.venv`
+3. Install dependencies: `uv pip install -e .`
+4. Configure LangWatch CLI for local monitoring
+
+## Next Steps
+
+- Set up project dependencies
+- Implement basic agent structures
+- Create sample workflows
+- Integrate LangWatch tracking
+- Build example use cases
