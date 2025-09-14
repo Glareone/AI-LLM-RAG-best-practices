@@ -133,12 +133,12 @@ Theoretical Part
 ---
 ## Advanced Topics. Theory and Practice.
 ### 1. Advanced Evaluation Metrics & Methodologies
-1. [Document Retrieval Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/advanced-topics)  
-    a. NDCG@K (Normalized Discounted Cumulative Gain) - Ranking quality with relevance grades  
-    b. Mean Reciprocal Rank (MRR) - First relevant document positioning  
-    c. Expected Reciprocal Rank (ERR) - User behavior modeling with graded relevance  
-    d. Rank-Biased Precision (RBP) - Early result weighting strategies  
-    e. Embedding Quality Metrics - Intra-cluster vs inter-cluster distance analysis
+1. [Document Retrieval Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md)  
+    a. [NDCG@K (Normalized Discounted Cumulative Gain)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - Ranking quality with relevance grades  
+    b. [Mean Reciprocal Rank (MRR)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) -  - First relevant document positioning  
+    c. [Expected Reciprocal Rank (ERR)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - User behavior modeling with graded relevance  
+    d. [Rank-Biased Precision (RBP)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - Early result weighting strategies  
+    e. [Embedding Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/README.md) - Intra-cluster vs inter-cluster distance analysis. Quality of your vector space - are similar documents close together   
 2. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     a. [F1, Recall, Precision. Fundamental metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Fundamental%20Metrics%20F1%20Precision%20Recall.md)   
     b. [BLEU Score - N-gram overlap evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)   
