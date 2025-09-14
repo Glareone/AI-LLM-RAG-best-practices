@@ -156,7 +156,15 @@ Theoretical Part
     b. Pearson/Spearman Correlation - Human judge alignment  
     c. Likert Scale Rating Systems - Multi-point evaluation frameworks
 
-### 2. Advanced ML Architecture & Training
+### 2. RAG Frameworks and Libraties.
+1. [RAG System assessment and quality control:](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/RAG%20System%20assessment%20and%20quality%20control.md)
+    a. LangWatch, LangFuse  
+    b. Galileo  
+    c. Ragas  
+    d. DeepEval  
+    e. TrueLens  
+
+### 3. Advanced ML Architecture & Training
 1. Neural Network Fundamentals   
     a. ReLU vs Advanced Activations (GELU, Swish/SiLU)
     b. Layer Normalization vs Batch Normalization - Training stability techniques  
@@ -173,7 +181,7 @@ Theoretical Part
     c. Checkpoint Averaging - Model stability improvement  
     d. Gradient Accumulation - Simulating larger batch sizes  
 
-#### 3. Parameter-Efficient Fine-tuning (PEFT)
+### 4. Parameter-Efficient Fine-tuning (PEFT)
 1. LoRA (Low-Rank Adaptation)  
     a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
     b. Alpha Scaling Factor - Typically 16-32  
@@ -186,7 +194,7 @@ Theoretical Part
     c. Sequence Length Limits - 512-4096 tokens task dependency  
     d. Weight Decay (L2 Regularization) - λ||w||² with λ = 1e-4 to 1e-2  
 
-#### 4. Advanced Retrieval & Re-ranking
+### 5. Advanced Retrieval & Re-ranking
 1. [Re-ranking Algorithms](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Advanced%20Retrieval%20&%20Re-ranking.md)   
     a. Reciprocal Rank Fusion (RRF) - RRF_score = Σ(1/(k + rank_i))  
     b. Cross-encoder vs Bi-encoder - Accuracy vs speed trade-offs  
@@ -199,7 +207,7 @@ Theoretical Part
     b. Context Preservation - Chunk coherence maintenance  
     c. Window Size Optimization - Re-ranking candidate selection (100-1000)  
 
-### 5. MLOps & Production Platforms
+### 6. MLOps & Production Platforms
 1. Evaluation Platforms  
     a. AI Foundry (Microsoft) - Model testing and evaluation  
     b. Weights & Biases (W&B) - Experiment tracking  
@@ -212,7 +220,7 @@ Theoretical Part
     b. DVC (Data Version Control) - Data and model versioning  
     c. BentoML - Model serving framework architecture  
 
-### 6. Advanced LLM Framework Architectures
+### 7. Advanced LLM Framework Architectures
 1. LangGraph (Advanced over LangChain)  
     a. State Management - Persistent conversation state
     b. Graph Architecture - Nodes and edges for complex workflows  
@@ -229,7 +237,7 @@ Theoretical Part
     b. Error Recovery Strategies - Retry logic, fallback mechanisms  
     c. Async Execution - Resource management at scale  
 
-### 7. Structured Output & Schema Design
+### 8. Structured Output & Schema Design
 1. Pydantic Advanced Usage  
     a. Field Validation - Custom validators, constraints (min/max, regex)  
     b. JSON Schema Generation - Automatic API documentation  
@@ -240,7 +248,7 @@ Theoretical Part
     b. Retry Logic Implementation - Parse failure handling  
     c. Validation Feedback Loops - Error correction workflows  
 
-### 8. Massive Parallel Training (Enterprise Scale)  
+### 9. Massive Parallel Training (Enterprise Scale)  
 1. Distributed Training Strategies  
     a. Data Parallelism - Batch distribution across GPUs  
     b. Model Parallelism - Layer splitting across devices  
@@ -248,7 +256,7 @@ Theoretical Part
     d. Gradient Synchronization - AllReduce, parameter servers  
     e. Mixed Precision Training - Memory efficiency optimization  
 
-### 9. Advanced Overfitting Prevention  
+### 10. Advanced Overfitting Prevention  
 1. Regularization Techniques  
     a. Early Stopping - Validation loss plateau detection  
     b. Dropout Rates - 0.1-0.3 optimal ranges  
