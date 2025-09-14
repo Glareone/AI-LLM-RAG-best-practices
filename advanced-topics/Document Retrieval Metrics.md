@@ -1,13 +1,58 @@
 ## Advanced AI LLM Topics.
 ### Document Retrieval Metrics
 ---
-* NDCG@K (Normalized Discounted Cumulative Gain) - Ranking quality with relevance grades
+### NDCG@K. Normalized Discounted Cumulative Gain
+**➡️ NDCG@K (Normalized Discounted Cumulative Gain)** - Ranking quality with relevance grades  
+
+**➡️ When to use: When ranking order matters significantly.**  
 > How good your ranking is, considering both relevance AND position.
 > Perfect for RAG because users care more about top results.
+> Simple explanation: Measures not just if relevant docs are retrieved, but whether the most relevant ones appear first.
+
+```python
+Formula: NDCG@k = DCG@k / IDCG@k
+
+DCG = Discounted Cumulative Gain
+IDCG = Ideal DCG (best possible ranking)
+
+Query: "Find me AI tutorials"
+Retrieved ranking: [Python_Advanced ✓✓✓, AI ✓✓✓✓, Java_Guide ✗]
+Relevance scores:   [3,                4,                   0]
+
+DCG@3 = 3/log₂(2) + 4/log₂(3) + 0/log₂(4) = 3 + 2.52 + 0 = 5.52
+IDCG@3 = 4/log₂(2) + 3/log₂(3) + 0/log₂(4) = 4 + 1.89 + 0 = 5.89
+NDCG@3 = 5.52/5.89 = 0.94
+```
+---
+### MRR. Mean Reciprocal Rank.
+**➡️ Mean Reciprocal Rank (MRR) - First relevant document positioning.**  
+**➡️ When to use: When users typically only care about the first good result.**  
+> What it measures: How quickly users find their first relevant result. Critical for RAG user experience.  
+
+
+```python
+Formula: MRR = Average of (1 / rank of first relevant result)
+Example:
+Query 1: First relevant at position 2 → 1/2 = 0.5
+Query 2: First relevant at position 1 → 1/1 = 1.0
+Query 3: First relevant at position 4 → 1/4 = 0.25
+MRR = (0.5 + 1.0 + 0.25) / 3 = 0.58
+```
 
 ---
-* Mean Reciprocal Rank (MRR) - First relevant document positioning
-> What it measures: How quickly users find their first relevant result. Critical for RAG user experience.
+### Contextual Relevancy.
+**➡️ Simple explanation: How relevant is the retrieved context to the user's question?**  
+**➡️ When to use: To ensure your retrieval system finds contextually appropriate information.**  
+
+Calculation: Usually measured using LLM-as-a-judge that scores 0-1.  
+
+```
+Example:
+Question: "How do I reset my password?"
+Retrieved context: "To reset your password, go to settings..." → Score: 0.95
+Retrieved context: "Our company was founded in 1995..." → Score: 0.1
+```
+
 
 ---
 * Expected Reciprocal Rank (ERR) - User behavior modeling with graded relevance
