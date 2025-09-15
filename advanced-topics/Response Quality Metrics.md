@@ -7,7 +7,7 @@
 ### Response Quality Metrics
 ----
 #### 1. BLEU Score - N-gram overlap evaluation.  
-```
+
 Traditional metric. BLEU - Still widely used, fast computation.  
 Precision-focused metric that compares n-gram (word sequence) overlaps between generated text and reference text using modified precision to avoid gaming short responses.
 
@@ -17,34 +17,42 @@ where:
 - pₙ = Modified n-gram precision 
 - wₙ = Uniform weights (typically 0.25 for 1-4 grams)
 
-✅ Machine Translation - Originally designed for this
-✅ Fast regression testing - Quick performance checks
-✅ Exact matching requirements - When precision matters more than creativity
-✅ Baseline establishment - Standard benchmark comparisons
-✅ High-volume evaluation - Thousands of samples per minute
-
-❌ "rain" vs "raining" = ERROR - No semantic understanding
-❌ "Happy birthday!" vs "Joyful anniversary!" = 0 score - Different words, same meaning
-❌ Word order insensitive - "Dog bites man" = "Man bites dog"
-❌ No reasoning evaluation - Can't assess logical flow or argumentation
-
-✅ Good for:
-   * Factual Q&A agents with known correct answers
-   * Form-filling or data extraction tasks
-   * Agents with templated response patterns
-   * Regression testing against established baselines
-
-❌ Problematic for:
-   * Creative or open-ended responses
-   * Multi-turn conversations with context
-   * Agents that should provide diverse valid answers
-   * Complex reasoning tasks
-
-🚝 Speed: 1000x faster than semantic metrics
-👌 Reproducibility: Deterministic, no model dependencies
-📗 Industry standard: Expected in ML papers and benchmarks
-💡 Resource efficiency: Runs on CPU, minimal memory
 ```
+✅ Machine Translation - Originally designed for this  
+✅ Fast regression testing - Quick performance checks  
+✅ Exact matching requirements - When precision matters more than creativity  
+✅ Baseline establishment - Standard benchmark comparisons  
+✅ High-volume evaluation - Thousands of samples per minute  
+
+❌ "rain" vs "raining" = ERROR - No semantic understanding  
+❌ "Happy birthday!" vs "Joyful anniversary!" = 0 score - Different words, same meaning  
+❌ Word order insensitive - "Dog bites man" = "Man bites dog"  
+❌ No reasoning evaluation - Can't assess logical flow or argumentation  
+```
+
+Good for:
+```
+   ✅ Factual Q&A agents with known correct answers  
+   ✅ Form-filling or data extraction tasks  
+   ✅ Agents with templated response patterns  
+   ✅ Regression testing against established baselines  
+```
+
+Problematic for:  
+```
+   ❌ Creative or open-ended responses  
+   ❌ Multi-turn conversations with context  
+   ❌ Agents that should provide diverse valid answers  
+   ❌ Complex reasoning tasks  
+```
+Still good because of:
+```
+   🚝 Speed: 1000x faster than semantic metrics
+   👌 Reproducibility: Deterministic, no model dependencies
+   📗 Industry standard: Expected in ML papers and benchmarks
+   💡 Resource efficiency: Runs on CPU, minimal memory
+```
+
 Real-world use case. Fast content moderation pipeline.
 
 ```python
@@ -112,24 +120,95 @@ ROUGE-1: Unigram recall - captures content coverage
 ROUGE-2: Bigram recall - measures fluency and coherence
 ROUGE-L: Longest Common Subsequence - preserves sentence structure
 
-Essential for Summarization Because:
-✅ Content coverage: Ensures key information isn't missed
-✅ Recall orientation: Perfect for summarization (vs BLEU's precision)
-✅ Multiple variants: Different aspects of summary quality
-✅ Proven correlation: 0.78 correlation with human judgment in summarization
+Good for Summarization Evaluation Because:
+   ✅ Content coverage: Ensures key information isn't missed
+   ✅ Recall orientation: Perfect for summarization (vs BLEU's precision)
+   ✅ Multiple variants: Different aspects of summary quality
+   ✅ Proven correlation: 0.78 correlation with human judgment in summarization
 
 When to Choose ROUGE First:
-✅ Text summarization - Primary use case
-✅ Content extraction - Information retrieval tasks
-✅ Coverage analysis - "Did we include the key points?"
-✅ Abstractive vs extractive - Comparing summarization approaches
+   ✅ Text summarization - Primary use case
+   ✅ Content extraction - Information retrieval tasks
+   ✅ Coverage analysis - "Did we include the key points?"
+   ✅ Abstractive vs extractive - Comparing summarization approaches
+
+Good for:  
+   ✅ Document summarization agents
+   ✅ Meeting transcript summarization
+   ✅ Email/chat conversation digests
+   ✅ News article condensation
+   ✅ Research paper abstracts
+Problematic for:  
+   ❌ Creative writing generation
+   ❌ Question answering (precision matters more)
+   ❌ Code generation tasks
+   ❌ Open-ended conversations
 
 Reasoning Evaluation Limitations:
-❌ No logical flow assessment - Can't evaluate argument structure
-❌ Surface-level matching - Misses deeper comprehension
-❌ No causal reasoning - Can't assess "because" or "therefore" relationships
+   ❌ No logical flow assessment - Can't evaluate argument structure
+   ❌ Surface-level matching - Misses deeper comprehension
+   ❌ No causal reasoning - Can't assess "because" or "therefore" relationships
 
-Real-world use case. Multi-document summarization evaluation
+Still good because of:  
+   🚝 Speed: Fast computation, CPU-friendly
+   👌 Reproducibility: Deterministic, established implementations
+   📗 Industry standard: De facto metric for summarization research
+   💡 Resource efficiency: No neural models required
+
+```
+
+#### ROUGE Calculation Example
+IMPORTANT❗️: To calculate the ROUGE you still need to have a reference summary.  
+
+➡️ Original Text: "Climate change is causing rising sea levels. The ice caps are melting rapidly. Coastal cities face flooding risks. Scientists recommend immediate action to reduce carbon emissions."
+➡️ Reference Summary: "Climate change causes rising seas and flooding risks in coastal cities."
+➡️ Candidate Summary: "Rising sea levels threaten coastal cities due to climate change."
+
+#### Step-by-Step ROUGE Calculation:
+1. Tokenization:
+```python
+   Reference: ["Climate", "change", "causes", "rising", "seas", "and", "flooding", "risks", "in", "coastal", "cities"]
+   Candidate: ["Rising", "sea", "levels", "threaten", "coastal", "cities", "due", "to", "climate", "change"]
+```
+
+3. ROUGE-1 (Unigram Recall):
+```python
+   * Overlapping words: ["climate", "change", "rising", "coastal", "cities"] = 5 matches
+   * Total words in reference: 11
+   * ROUGE-1 = 5/11 ≈ 0.45
+```
+
+4. ROUGE-2 (Bigram Recall):
+```python
+   * Reference bigrams: ["Climate change", "change causes", "causes rising", "rising seas", ...]
+   * Candidate bigrams: ["Rising sea", "sea levels", "levels threaten", "coastal cities", "climate change"]
+   * Overlapping bigrams: ["climate change", "coastal cities"] = 2 matches
+   * Total bigrams in reference: 10
+   * ROUGE-2 = 2/10 = 0.20
+```
+
+5. ROUGE-L (Longest Common Subsequence):
+```python
+   * LCS: ["climate", "change", "rising", "coastal", "cities"] = length 5
+   * Reference length: 11
+   * Candidate length: 10
+   
+   **Recall**: R_lcs = 5/11 ≈ 0.45
+   **Precision**: P_lcs = 5/10 = 0.50
+   **F1**: F_lcs = (2 × 0.45 × 0.50) / (0.45 + 0.50) ≈ 0.47
+   **OUTCOME**: ROUGE-L = 0.47
+```
+
+ROUGE Variants Comparison
+| Metric | Score | What It Measures | Interpretation | 
+| ------ | ----- | ---------------- | -------------- |
+| ROUGE-1  | 0.45 | Content coverage | 45% of key concepts captured | 
+| ROUGE-2  | 0.20 | Fluency/coherence| 20% of word pairs preserved  | 
+| ROUGE-L  | 0.47 | Structure preservation | Good overall content + structure |
+
+Real-world use case. Multi-document summarization evaluation  
+
+```python
 rouge_l_scores = []
 for doc_summary in multi_doc_summaries:
     # ROUGE-L captures cross-document information flow
