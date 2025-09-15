@@ -84,6 +84,24 @@ BP = 1.0 (no penalty since lengths match)
    BLEU = 1.0 × exp(0.25 × (-0.223 + -0.288 + -0.405))
    BLEU ≈ 0.79
 ```
+
+#### BLEU. Q&A Questions and Answers
+
+Q&A: BLEU for AI Agents  
+❓ Q1: Do I need ground truth to calculate BLEU?  
+❗️ A: Yes, absolutely. BLEU requires reference text(s) to compare against. You cannot calculate BLEU without predetermined "correct" answers.  
+  
+❓ Q2: Can I use BLEU for LangGraph AI agent evaluation?  
+❗️ A2: Yes, but with important limitations:  
+
+❓ Q3: How to use BLEU in LangGraph & Agentic world?  
+❗️ A3: Use BLEU for different things:  
+  * Use BLEU as first-pass filter: Quickly identify completely off-track responses
+  * **Create reference datasets**: **Build gold-standard Q&A pairs for your domain**
+  * Combine with **other semantic metrics**: **BLEU alone is insufficient for agent evaluation**  
+  * Consider response diversity: Some agent tasks benefit from varied responses  
+  * Monitor BLEU distribution: Track score patterns over time for agent performance trends  
+
 ----
 #### 2. ROUGE (L/1/2) - Recall-oriented summarization metrics.  
 ```
@@ -124,15 +142,6 @@ if rouge_2 < 0.3:  # Poor fluency
 if rouge_1 > 0.8 and rouge_l < 0.4:  # Good content, poor structure
     recommend_structure_improvement()
 ```
-
-#### BLEU Q&A
-
-Q&A: BLEU for AI Agents
-❓ Q1: Do I need ground truth to calculate BLEU?
-❗️ A: Yes, absolutely. BLEU requires reference text(s) to compare against. You cannot calculate BLEU without predetermined "correct" answers.
-
-❓ Q2: Can I use BLEU for LangGraph AI agent evaluation?
-❗️ A2: Yes, but with important limitations:
 
 ----
 #### 3. BERTScore - Semantic similarity using contextualized embeddings  
