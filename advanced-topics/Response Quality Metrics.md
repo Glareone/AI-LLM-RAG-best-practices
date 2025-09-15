@@ -223,6 +223,26 @@ if rouge_1 > 0.8 and rouge_l < 0.4:  # Good content, poor structure
     recommend_structure_improvement()
 ```
 
+#### ROUGE Q&A Questons and Answers
+❓ Q1: Which ROUGE variant should I prioritize for summarization agents?  
+❗️ A1: Use all three together for comprehensive evaluation:  
+* ROUGE-1: Primary metric for content coverage
+* ROUGE-2: Secondary for fluency assessment
+* ROUGE-L: Tertiary for structure quality
+
+❓ Q2: Can I use ROUGE without reference summaries?  
+❗️ A2: No, ROUGE requires reference summaries. However, you can create them:  
+
+* Extract key sentences from original text (extractive baseline)  
+* Use multiple human-written summaries as references  
+* Generate references with different models for comparison  
+
+❓ Q3: How do I set ROUGE thresholds for production summarization agents?  
+❗️ A3: Industry benchmarks for different domains.  
+
+❓ Q4: How does ROUGE work with LangGraph summarization agents?  
+❗️ A4: Perfect fit for multi-step summarization workflows.  
+
 ----
 #### 3. BERTScore - Semantic similarity using contextualized embeddings  
 ```
