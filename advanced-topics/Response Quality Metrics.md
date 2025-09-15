@@ -180,23 +180,24 @@ IMPORTANT❗️: To calculate the ROUGE you still need to have a reference summa
 
 4. ROUGE-2 (Bigram Recall):
 ```python
-   * Reference bigrams: ["Climate change", "change causes", "causes rising", "rising seas", ...]
-   * Candidate bigrams: ["Rising sea", "sea levels", "levels threaten", "coastal cities", "climate change"]
-   * Overlapping bigrams: ["climate change", "coastal cities"] = 2 matches
-   * Total bigrams in reference: 10
-   * ROUGE-2 = 2/10 = 0.20
+   1️⃣ Reference bigrams: ["Climate change", "change causes", "causes rising", "rising seas", ...]
+   2️⃣ Candidate bigrams: ["Rising sea", "sea levels", "levels threaten", "coastal cities", "climate change"]
+   3️⃣ Overlapping bigrams: ["climate change", "coastal cities"] = 2 matches
+   4️⃣ Total bigrams in reference: 10
+   5️⃣ ROUGE-2 = 2/10 = 0.20
 ```
 
 5. ROUGE-L (Longest Common Subsequence):
 ```python
    * LCS: ["climate", "change", "rising", "coastal", "cities"] = length 5
-   * Reference length: 11
-   * Candidate length: 10
+   * Reference length: 11 (TP True Positive + FN False Negative)
+   * Candidate length: 10 (True Positive + False Positive)
+
+   Precision: P_lcs = 5/10 = 0.50 (TP / TP+FP)
+   Recall: R_lcs = 5/11 ≈ 0.45 (TP / TP+FN)
    
-   **Recall**: R_lcs = 5/11 ≈ 0.45
-   **Precision**: P_lcs = 5/10 = 0.50
-   **F1**: F_lcs = (2 × 0.45 × 0.50) / (0.45 + 0.50) ≈ 0.47
-   **OUTCOME**: ROUGE-L = 0.47
+   F1 (Harmonic Mean, Balanced Performance): F_lcs = (2 × 0.45 × 0.50) / (0.45 + 0.50) ≈ 0.47
+   OUTCOME: ROUGE-L = 0.47
 ```
 
 ROUGE Variants Comparison
