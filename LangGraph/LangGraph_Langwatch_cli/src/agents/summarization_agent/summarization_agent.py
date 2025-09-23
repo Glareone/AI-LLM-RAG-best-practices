@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 
-from .base_agent import AgentConfig, BaseAgent
+from agents.base_agent import AgentConfig, BaseAgent
 
 
 class SummarizationAgent(BaseAgent):

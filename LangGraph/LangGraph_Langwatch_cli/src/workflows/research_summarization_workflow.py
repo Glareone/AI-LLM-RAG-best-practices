@@ -5,8 +5,8 @@ from typing import Any, Dict, List, Optional
 from langchain_core.messages import HumanMessage
 from langgraph.graph import StateGraph
 
-from ..agents.research_agent import ResearchAgent
-from ..agents.summarization_agent import SummarizationAgent
+from agents.research_agent.research_agent import ResearchAgent
+from agents.summarization_agent.summarization_agent import SummarizationAgent
 from .base_workflow import BaseWorkflow, WorkflowConfig
 
 
