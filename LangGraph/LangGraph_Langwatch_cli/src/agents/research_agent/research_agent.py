@@ -4,7 +4,8 @@ from typing import Any, Dict, List, Optional
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 
-from .base_agent import AgentConfig, BaseAgent
+from agents.base_agent import AgentConfig, BaseAgent
+from ...config.llm_config import llm_config
 
 
 class ResearchAgent(BaseAgent):
@@ -16,8 +17,8 @@ class ResearchAgent(BaseAgent):
             config = AgentConfig(
                 name="research_agent",
                 description="Specializes in research and information gathering",
-                temperature=0.3,
-                max_tokens=2000,
+                temperature=llm_config.reasoning_temperature,
+                max_tokens=llm_config.max_tokens,
                 model_name="gpt-4",
             )
         super().__init__(config)

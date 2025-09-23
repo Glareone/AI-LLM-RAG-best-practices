@@ -2,11 +2,13 @@
 
 import asyncio
 from langchain_core.messages import HumanMessage
-from agents.research_agent import ResearchAgent
-
+from agents.research_agent.research_agent import ResearchAgent
+from dotenv import load_dotenv
 
 async def main():
     """Simple example - just one agent doing research."""
+
+    load_dotenv()
 
     # Create agent
     agent = ResearchAgent()
