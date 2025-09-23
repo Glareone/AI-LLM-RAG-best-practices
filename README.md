@@ -140,6 +140,12 @@ Theoretical Part
     c. [Expected Reciprocal Rank (ERR)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - User behavior modeling with graded relevance  
     d. [Rank-Biased Precision (RBP)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - Early result weighting strategies  
     e. [Embedding Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/README.md) - Intra-cluster vs inter-cluster distance analysis. Quality of your vector space - are similar documents close together   
+2. [Document Retrieval Metrics 2](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document_Retrieval_Metrics_2.md)  
+    a. Fidelity - Measures recall quality - what percentage of all relevant documents in your dataset were actually retrieved in the top-n results.  
+    b. XDCG - Ranking quality within your retrieved top-k chunks, ignoring the rest of your document collection   
+    c. XDCG vs NDCG  
+    d. Max Relevance N - highest relevance score among your top-k retrieved chunks  
+    e. Holes - Counts missing ground truth data  
 3. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     a. [F1, Recall, Precision. Fundamental metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Fundamental%20Metrics%20F1%20Precision%20Recall.md)   
     b. [BLEU Score - N-gram overlap evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)   
