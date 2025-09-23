@@ -1,23 +1,24 @@
 """Research agent implementation."""
 
-from typing import Any, Dict, List, Optional
+from typing import Any
 
-from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 
 from agents.base_agent import AgentConfig, BaseAgent
+
 from ...config.llm_config import llm_config
 
 
 class ResearchAgent(BaseAgent):
     """Agent specialized in research and information gathering."""
 
-    def __init__(self, config: Optional[AgentConfig] = None):
+    def __init__(self, config: AgentConfig | None = None):
         """Initialize the research agent."""
         if config is None:
             config = AgentConfig(
                 name="research_agent",
                 description="Specializes in research and information gathering",
-                temperature=llm_config.reasoning_temperature,
+                temperature=llm_config.anthropic_chat_temperature,
                 max_tokens=llm_config.max_tokens,
                 model_name="gpt-4",
             )
@@ -25,8 +26,8 @@ class ResearchAgent(BaseAgent):
 
     async def execute(
         self,
-        messages: List[BaseMessage],
-        context: Optional[Dict[str, Any]] = None,
+        messages: list[BaseMessage],
+        context: dict[str, Any] | None = None,
     ) -> BaseMessage:
         """Execute research task.
         
@@ -39,7 +40,7 @@ class ResearchAgent(BaseAgent):
         """
         # TODO: Implement actual research logic with Azure OpenAI
         # This is a mockup implementation
-        
+
         user_query = ""
         for msg in messages:
             if isinstance(msg, HumanMessage):
@@ -66,7 +67,7 @@ class ResearchAgent(BaseAgent):
         # TODO: Add actual Azure OpenAI connection check
         return "healthy (mockup mode)"
 
-    def get_capabilities(self) -> List[str]:
+    def get_capabilities(self) -> list[str]:
         """Get research agent capabilities."""
         base_capabilities = super().get_capabilities()
         research_capabilities = [
