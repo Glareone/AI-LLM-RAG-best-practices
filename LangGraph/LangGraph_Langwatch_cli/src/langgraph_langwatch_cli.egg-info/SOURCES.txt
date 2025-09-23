@@ -13,6 +13,7 @@ src/agents/summarization_agent/summarization_agent.py
 src/config/__init__.py
 src/config/application_config.py
 src/config/llm_config.py
+src/config/research_config.py
 src/examples/__init__.py
 src/examples/simple_example.py
 src/langgraph_langwatch_cli.egg-info/PKG-INFO
@@ -21,6 +22,9 @@ src/langgraph_langwatch_cli.egg-info/dependency_links.txt
 src/langgraph_langwatch_cli.egg-info/requires.txt
 src/langgraph_langwatch_cli.egg-info/top_level.txt
 src/models/relevant_data.py
+src/prompts/__init__.py
+src/prompts/prompt_loader.py
 src/workflows/__init__.py
 src/workflows/base_workflow.py
 src/workflows/research_summarization_workflow.py
+tests/test_prompts.py

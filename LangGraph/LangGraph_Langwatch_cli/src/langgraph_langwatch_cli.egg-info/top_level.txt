@@ -1,5 +1,7 @@
 agents
 config
+databases
 examples
 models
+prompts
 workflows

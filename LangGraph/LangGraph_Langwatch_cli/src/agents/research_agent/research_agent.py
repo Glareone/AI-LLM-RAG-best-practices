@@ -1,5 +1,6 @@
 """Research agent implementation."""
 
+from pathlib import Path
 from typing import Any
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
@@ -7,6 +8,8 @@ from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from agents.base_agent import AgentConfig, BaseAgent
 
 from ...config.llm_config import llm_config
+from ...config.research_config import research_config
+from ...prompts.prompt_loader import PromptLoader
 
 
 class ResearchAgent(BaseAgent):
@@ -23,6 +26,12 @@ class ResearchAgent(BaseAgent):
                 model_name="gpt-4",
             )
         super().__init__(config)
+
+        # Load prompt templates
+        prompt_file = (
+            Path(__file__).parent.parent.parent / "prompts" / "research_agent_prompt.toml"
+        )
+        self.prompt_loader = PromptLoader(prompt_file)
 
     async def execute(
         self,
@@ -47,20 +56,27 @@ class ResearchAgent(BaseAgent):
                 user_query = msg.content
                 break
 
-        # Mockup research response
-        research_result = f"""
-        Research Results for: "{user_query}"
-        
-        Based on my analysis, here are the key findings:
-        
-        1. **Primary Information**: This appears to be a research query about {user_query}.
-        2. **Context Analysis**: The query requires deep investigation and fact-gathering.
-        3. **Recommendations**: Further analysis would benefit from additional context.
-        
-        *Note: This is a mockup response. Actual implementation will use Azure OpenAI.*
-        """
+        # Generate research response using synthesis prompt template
+        synthesis_template = self.prompt_loader.get_prompt("prompts", "synthesis_prompt")
 
-        return AIMessage(content=research_result.strip())
+        # Load synthesis component templates
+        components = self.prompt_loader.get_synthesis_components()
+
+        # Format each component with user query (for templates that need it)
+        research_result = synthesis_template.format(
+            source_count=research_config.max_sources,
+            executive_summary=components["executive_summary"].format(user_query=user_query),
+            key_findings=components["key_findings"].format(user_query=user_query).strip(),
+            source_analysis=components["source_analysis"].strip(),
+            confidence_assessment=components["confidence_assessment"].strip(),
+            recommendations=components["recommendations"].format(user_query=user_query).strip(),
+            further_research=components["further_research"].format(user_query=user_query).strip()
+        )
+
+        # Add implementation note
+        research_result += "\n\n*Note: This is a mockup response using prompt templates. Actual implementation will integrate with Azure OpenAI for real research capabilities.*"
+
+        return AIMessage(content=research_result)
 
     async def health_check(self) -> str:
         """Perform health check."""
@@ -77,3 +93,18 @@ class ResearchAgent(BaseAgent):
             "Multi-source research coordination",
         ]
         return base_capabilities + research_capabilities
+
+    def get_research_config(self) -> dict[str, Any]:
+        """Get current research configuration.
+
+        Returns:
+            Dictionary containing research configuration settings
+        """
+        return {
+            "max_sources": research_config.max_sources,
+            "confidence_threshold": research_config.confidence_threshold,
+            "default_depth": research_config.default_depth,
+            "citation_format": research_config.citation_format,
+            "fact_check_enabled": research_config.fact_check_enabled,
+            "bias_detection_enabled": research_config.bias_detection_enabled,
+        }
