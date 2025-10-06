@@ -152,9 +152,9 @@ Theoretical Part
     c. [ROUGE (L/1/2) - Recall-oriented summarization metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     d. [G-Eval (LLM as a judge) - Sophisticated evaluation framework that uses LLMs themselves to evaluate outputs based on detailed criteria.](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
     d. [BERTScore - Semantic similarity using contextualized embeddings](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
-    e. BLEURT - BERT-based learned evaluation metric  
+    e. [BLEURT](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics%202.md#bleurt---bert-based-learned-evaluation-metric) - BERT-based learned evaluation metric  
     f. SacreBLEU - Standardized BLEU with proper tokenization  
-    g. METEOR - Synonym and paraphrase consideration  
+    g. [METEOR](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics%202.md#meteor--synonym-and-paraphrase-consideration) - Synonym and paraphrase consideration  
     h. CIDEr - Consensus-based evaluation  
     i. CHRF - Character-level F-score for multilingual evaluation  
 4. Human-Correlation Metrics   
@@ -163,12 +163,14 @@ Theoretical Part
     c. Likert Scale Rating Systems - Multi-point evaluation frameworks
 
 ### 2. RAG Frameworks and Libraties.
-1. [RAG System assessment and quality control:](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/RAG%20System%20assessment%20and%20quality%20control.md)
-    a. LangWatch, LangFuse  
-    b. Galileo  
+1. [RAG System assessment and quality control:](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/RAG%20System%20assessment%20and%20quality%20control.md)  
+    a. LangWatch, LangFuse   
+    b. Galileo   
     c. Ragas  
     d. DeepEval  
-    e. TrueLens  
+    e. TrueLens
+    f. HuggingFace (NEW, in progress)  
+    g. AI Foundry (NEW, in progress)  
 
 ### 3. Advanced ML Architecture & Training
 1. Neural Network Fundamentals   
