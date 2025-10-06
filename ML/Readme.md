@@ -2,8 +2,8 @@
 
 ### Additional Materials
 1️⃣ [Neural Network Fundamentals](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/Neural%20Network%20Fundamentals.md)  
-2️⃣ CNN Advanced Concepts (IN PROGRESS)  
-3️⃣ Advanced Training Techniques (IN PROGRESS)  
+2️⃣ [CNN Advanced Concepts (IN PROGRESS)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/CNN%20Advanced%20Concepts.md)  
+3️⃣ [Advanced Training Techniques](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/ML/Readme.md) (IN PROGRESS)    
 
 ## Data Centric Approach
 <img width="704" alt="image" src="https://github.com/user-attachments/assets/cd26f12a-dc14-4896-ba30-1025c3b19890" />
