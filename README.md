@@ -178,11 +178,11 @@ Theoretical Part
     b. Layer Normalization vs Batch Normalization - Training stability techniques  
     c. Gradient Clipping - Exploding gradient prevention  
     d. Mixed Precision Training - FP16/BF16 memory optimization  
-2. CNN Advanced Concepts  
-    a. Kernel Size Impact - Local vs global feature extraction (3x3 vs 7x7)
-    b. Parameter Sharing Benefits - Translation invariance principles
-    c. Hierarchical Feature Learning - Low-level to high-level progression
-    d. CNN vs MLP Scalability - O(k×c×f) vs O(n×m) parameter complexity
+2. CNN Advanced Concepts   
+    a. Kernel Size Impact - Local vs global feature extraction (3x3 vs 7x7)  
+    b. Parameter Sharing Benefits - Translation invariance principles  
+    c. Hierarchical Feature Learning - Low-level to high-level progression  
+    d. CNN vs MLP Scalability - O(k×c×f) vs O(n×m) parameter complexity  
 3. Advanced Training Techniques  
     a. Learning Rate Scheduling - Cosine annealing, linear decay  
     b. Warmup Steps - Training stability (10% of total steps)  
