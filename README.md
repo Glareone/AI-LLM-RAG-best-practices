@@ -168,7 +168,7 @@ Theoretical Part
     b. Galileo   
     c. Ragas  
     d. DeepEval  
-    e. TrueLens
+    e. TrueLens  
     f. HuggingFace (NEW, in progress)  
     g. AI Foundry (NEW, in progress)  
 
