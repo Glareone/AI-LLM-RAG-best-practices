@@ -1,9 +1,11 @@
 # Machine Learning
 
 ### Additional Materials
-1️⃣ [Neural Network Fundamentals](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/Neural%20Network%20Fundamentals.md)  
-2️⃣ [CNN Advanced Concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/CNN%20Advanced%20Concepts.md) (IN PROGRESS)   
-3️⃣ [Advanced Training Techniques](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/ML/Readme.md) (IN PROGRESS)    
+0️⃣ Overfitting. Why regularization works. L2 regularization formula (IN PROGRESS)  
+1️⃣ General ML principles. Cross-validation, train/val curves. (IN PROGRESS)  
+2️⃣ [Neural Network Fundamentals](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/Neural%20Network%20Fundamentals.md)  
+3️⃣ [CNN Advanced Concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/ML/CNN%20Advanced%20Concepts.md) (IN PROGRESS)   
+4️⃣ [Advanced Training Techniques](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/ML/Readme.md) (IN PROGRESS)    
 
 ## Data Centric Approach
 <img width="704" alt="image" src="https://github.com/user-attachments/assets/cd26f12a-dc14-4896-ba30-1025c3b19890" />
