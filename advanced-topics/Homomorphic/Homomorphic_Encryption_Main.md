@@ -1,4 +1,5 @@
-### Homomorphic Encryption in Large Language Models (LLMs)A beginner's guide to understanding and implementing homomorphic encryption for privacy-preserving LLM applications.  
+### Homomorphic Encryption in Large Language Models
+#### A guide how to understand and implement the homomorphic encryption for privacy-preserving LLM applications.  
 ---
 ### Table of Contents
 
