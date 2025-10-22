@@ -271,6 +271,10 @@ Theoretical Part
     c. Training/Validation Loss Curves - Overfitting gap analysis  
     d. Cross-validation Strategies - 5-10 fold robust evaluation
 
+### [11. Homomorphic encryption (encryption on the fly) in LLMs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
+1. [Main Topics. What, Why, How](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
+2. Quick references
+3. Examples
 ---
 
 ### LangWatch vs LangFuse vs AI Foundry for SemanticKernel
