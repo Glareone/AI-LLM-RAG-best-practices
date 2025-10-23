@@ -54,3 +54,12 @@ START: Do you need to process sensitive data?
 | Development  | 8192 | [60, 40, 40, 60] |
 | Production (Standard) | 16384 | [60, 40, 40, 40, 60] |
 | High Security | 32768 | [60, 40, ..., 40, 60] |
+
+
+### Performance vs Security Trade-offs
+| Setting | Encryption Time | Operation Time | Security | When to Use | 
+| ------- | --------------- | -------------- | -------- | ----------- |
+| Low | Fast (10ms) | Fast (50ms) | 80-bit | Testing only | 
+| Medium | Medium (50ms) | Medium (200ms) | 128-bit | Development | 
+| High | Slow (200ms) | Slow (800ms) | 192-bit | Production |
+| Maximum | Very Slow (1s+) | Very Slow (3s+) | 256-bit | Critical data |
