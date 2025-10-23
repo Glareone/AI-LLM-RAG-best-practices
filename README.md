@@ -273,11 +273,11 @@ Theoretical Part
 
 ### [11. Homomorphic encryption (encryption on the fly) in LLMs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
 1. [Main Topics. What, Why, How](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
-2. [Q&A. Quick references](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
-    a. [Whether or not. Use Cases](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)
-    b. [How to Start](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)
-    c. [Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)
-    d. [Performance and Trade-offs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+2. [Q&A. Quick references](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)    
+    a. [Whether or not. Use Cases](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    b. [How to Start](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    c. [Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    d. [Performance and Trade-offs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)    
 2. Examples  
     a. [TenSeal, Concrete-ML, Microsoft Seal](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Examples.md)  
 ---
