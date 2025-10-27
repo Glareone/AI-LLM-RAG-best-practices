@@ -1,4 +1,6 @@
 # RAG System assessment and quality control
+[Agentic Application Evaluations Could be found here](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/AI_agents/Agentic_Evaluations.md)
+
 ### Framework Comparison Table
 | Framework | Open Source | Key Metrics | Best For | Ease of Use | LLM-as-Judge | 
 | --------- | ----------- | ----------- | -------- | ----------- | ------------ |
