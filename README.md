@@ -172,7 +172,7 @@ Theoretical Part
     e. TrueLens  
     f. HuggingFace (NEW, in progress)    
     g. AI Foundry
-2. [Agentic Application Evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/AI_agents/Agentic_Evaluations.md)
+2. [Agentic Application Evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/AI_agents/Agentic_Evaluations.md)  
     a. General Agentic Application Evaluations  
     b. Monitoring  
     c. Trajectory Evaluation  
