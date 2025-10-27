@@ -162,15 +162,22 @@ Theoretical Part
     b. Pearson/Spearman Correlation - Human judge alignment  
     c. Likert Scale Rating Systems - Multi-point evaluation frameworks
 
-### 2. RAG Frameworks and Libraties.
+### 2. RAG Evaluation Frameworks and Libraties. Agentic Application Evaluation
 1. [RAG System assessment and quality control:](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/RAG%20System%20assessment%20and%20quality%20control.md)  
-    a. LangWatch, LangFuse   
+    a. LangWatch  
+    b. LangFuse    
     b. Galileo   
     c. Ragas  
     d. DeepEval  
     e. TrueLens  
-    f. HuggingFace (NEW, in progress)  
-    g. AI Foundry (NEW, in progress)  
+    f. HuggingFace (NEW, in progress)    
+    g. AI Foundry
+2. [Agentic Application Evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/AI_agents/Agentic_Evaluations.md)
+    a. General Agentic Application Evaluations  
+    b. Monitoring  
+    c. Trajectory Evaluation  
+    d. Structure of the Evaluation  
+    e. Application Improvements using G-Eval (LLM-as-a-Judge)  
 
 ### 3. Advanced ML Architecture & Training
 1. Neural Network Fundamentals   
