@@ -1,6 +1,6 @@
 ### Parameter-Efficient Fine-tuning
 
-1. LoRA (Low-Rank Adaptation)  
+1. [LoRA (Low-Rank Adaptation)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/LoRa.md)  
     a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
     b. Alpha Scaling Factor - Typically 16-32  
     c. Target Module Selection - Query, value, key, output projections  
