@@ -196,14 +196,14 @@ Theoretical Part
     c. Checkpoint Averaging - Model stability improvement  
     d. Gradient Accumulation - Simulating larger batch sizes  
 
-### 4. Parameter-Efficient Fine-tuning (PEFT)
-1. LoRA (Low-Rank Adaptation)  
+### 4. [Parameter-Efficient Fine-tuning (PEFT)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Readme.md)
+1. [LoRA (Low-Rank Adaptation)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/LoRa.md)  
     a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
     b. Alpha Scaling Factor - Typically 16-32  
     c. Target Module Selection - Query, value, key, output projections  
     d. AdaLoRA - Adaptive rank allocation  
     e. QLoRA - 4-bit quantized LoRA for memory efficiency  
-2. Training Parameters  
+2. [Training Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Training%20Parameters.md)  
     a. Learning Rate Ranges - 1e-5 to 5e-4 for LLMs with warmup  
     b. Batch Size Optimization - 8-32 full fine-tuning, 64-128 LoRA  
     c. Sequence Length Limits - 512-4096 tokens task dependency  
