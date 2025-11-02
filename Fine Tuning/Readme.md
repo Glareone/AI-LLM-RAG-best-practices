@@ -7,7 +7,7 @@
     d. AdaLoRA - Adaptive rank allocation   
     e. QLoRA - 4-bit quantized LoRA for memory efficiency  
 
-2. Training Parameters
+2. [Training Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Training%20Parameters.md)
     a. Learning Rate Ranges - 1e-5 to 5e-4 for LLMs with warmup  
     b. Batch Size Optimization - 8-32 full fine-tuning, 64-128 LoRA  
     c. Sequence Length Limits - 512-4096 tokens task dependency  
