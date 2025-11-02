@@ -2,13 +2,14 @@
 
 1️⃣ Precision: "Of what I found, how much was actually good?"  
 2️⃣ Recall: "Of all the good stuff that exists, how much did I find?"  
-3️⃣ F1: "What's the balanced score between precision and recall?".    
-  - Harmonic F1
+3️⃣ [F1: "What's the balanced score between precision and recall?"](#3%EF%B8%8F⃣-f1-ariphmetic-mean)      
+  - [Harmonic F1 mean](#3%EF%B8%8F⃣-f1-harmonic-mean)  
 
 4️⃣ [Precision vs Recall Trade-off](#precision-vs-recall-trade-off)  
   - [Imbalance Confusion](#imbalance-confusion)
 
-5️⃣ F-beta score. Difference between F-beta and F1.
+5️⃣ [F-beta score. Difference between F-beta and F1.](#f-β-beta-score)
+
 ---
 
 ### Basic metrics understanding
@@ -83,11 +84,11 @@ Recall = 90 / (90 TP + 30 FN) = 90/120 = 0.75 (75%)
 Interpretation: "I caught 75% of all real threats"
 ```
 
-3️⃣ F1: Ariphmetic Mean
+##### 3️⃣ F1: Ariphmetic Mean
 ```
 (Precision + Recall) / 2
 ```
-3️⃣ F1: Harmonic Mean
+##### 3️⃣ F1: Harmonic Mean
 - Example 1: Balanced Performance
 ```
 
