@@ -1,16 +1,16 @@
 #### LangGraph Basics. Table of Content
-0️⃣ When to Use What (Decision Framework)  
+0️⃣ [When to Use What (Decision Framework)](#0%EF%B8%8F⃣-when-to-use-what-decision-framework)  
    - Direct OpenAI/Bedrock calls: Simple, one-shot completions  
    - LangChain: Linear chains, simple sequential workflows  
    - LangGraph: Cyclic workflows, stateful multi-step reasoning, conditional branching, agent loops
 
-1️⃣ Core LangGraph Primitives  
+1️⃣ [Core LangGraph Primitives](#0%EF%B8%8F⃣-when-to-use-what-decision-framework)  
    - StateGraph vs MessageGraph - which to use when  
    - Compilation model (graph.compile() and what happens)  
    - Checkpointers - MemorySaver, SqliteSaver, PostgresSaver (foundation for persistence)  
    - Thread/Run concepts - how conversations map to executions
 
-2️⃣ Graph Execution Model  
+2️⃣ [Graph Execution Model](#2%EF%B8%8F⃣-graph-execution-model-start--end-nodes-conditional-nodes)  
    - How LangGraph actually runs (iterative execution, not just DAG)  
    - The START and END special nodes
    - Parallel node Execution
