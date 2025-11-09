@@ -237,11 +237,13 @@ Theoretical Part
 
 ### 7. Advanced LLM Frameworks. LangGraph. Semantic Kernel.  
 1. [LangGraph Basics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md)  
-    a. When to Use What (Decision Framework)  
-    b. Core LangGraph Primitives: StateGraph & MessageGraph, Compilation model, Checkpointers, Thread/Run concepts  
-    c. Graph Execution Model: how LangGraph executes iteratively  
-    d. Subgraphs & Composition: when to use subgraphs vs separate graphs  
-    e. Error Handling & Interrupts (Critical for production)  
+    a. [When to Use What (Decision Framework)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    b. [Core LangGraph Primitives: StateGraph & MessageGraph, Compilation model, Checkpointers, Thread/Run concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)   
+    c. [Graph Execution Model: how LangGraph executes iteratively. StateGraph & MessageGraph](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    d. [LangGraph Checkpointers: MemorySaver, SqliteSaver, PostgresSaver](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    e. [LangGraph composition: START, END, Conditional Edge. Parallel node execution. Cycle limit (recursion_limit), infinite loops](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#2%EF%B8%8F%E2%83%A3-graph-execution-model-start--end-nodes-conditional-nodes)  
+    e. Subgraphs & Composition: when to use subgraphs vs separate graphs  
+    f. Error Handling & Interrupts (Critical for production)  
 3. [LangGraph Advanced Topics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Advanced.md)  
     a. State Management - Persistent conversation state  
     b. Graph Architecture - Nodes and edges for complex workflows  
