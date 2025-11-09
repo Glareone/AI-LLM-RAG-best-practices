@@ -1,6 +1,4 @@
-### Table of Content
-
-#### LangGraph Basics
+#### LangGraph Basics. Table of Content
 0️⃣ When to Use What (Decision Framework)  
    - Direct OpenAI/Bedrock calls: Simple, one-shot completions  
    - LangChain: Linear chains, simple sequential workflows  
@@ -28,4 +26,33 @@
    - Error propagation and recovery  
    - Retry strategies  
 
-LangGraph Advanced Topics (State Management, Graph Architecture, Conditional Routing, Human-in-the-loop, Parallel Processing) Could be found [here](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Advanced.md)
+[LangGraph Advanced Topics (State Management, Graph Architecture, Conditional Routing, Human-in-the-loop, Parallel Processing) could be found here](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Advanced.md)  
+
+---
+#### 0️⃣ When to Use What (Decision Framework)  
+
+| Approach | Use When | Don't Use When | Example | 
+| -------- | -------- | -------------- | ------- |
+| Use CaseDirect API Calls within RAG Application | Single completion, no complex context needed, performance critical | Need complex conversation history or context, multi-step reasoning, or orchestration | Text classification, one-shot translation, simple Q&A | 
+| LangChain, Semantic Kernel | Linear workflow (A→B→C), simple chains, basic RAG | Need loops, conditional branching, or complex state | Document summarization pipeline, basic RAG chatbot |
+| LangGraph | Cycles/loops needed, conditional routing, multi-agent, human-in-loop | Simple linear flow, minimal state | Research agent, code review bot, multi-step planning | 
+
+💡 Decision Flowchart Logic:
+```python
+Does your task require loops or cycles? 
+├─ YES → LangGraph
+└─ NO → Does it need multi-step orchestration?
+    ├─ YES → Does it need conditional branching?
+    │   ├─ YES → LangGraph
+    │   └─ NO → LangChain (if simple) or LangGraph (if complex state)
+    └─ NO → Direct API call
+```
+
+💡 Key Differentiators
+LangGraph becomes necessary when you need:
+
+➡️ Agent loops - "try, evaluate, retry" patterns  
+➡️ Dynamic routing - flow changes based on LLM output or conditions  
+➡️ Persistent state - maintain context across multiple invocations  
+➡️Human checkpoints - pause for approval before continuing  
+➡️ Parallel branches - concurrent execution with state merging  
