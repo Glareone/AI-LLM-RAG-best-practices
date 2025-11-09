@@ -160,8 +160,28 @@ print(state.values)  # {'messages': [HumanMessage(...), AIMessage(...)]}
 ```
 
 ➡️ Reducer in MessageGraph:  
-   1️⃣ MessageGraph has a built-in reducer for messages (automatically appends). Cannot be customized or add other reducers.  
-   2️⃣ MessageGraph does use the fixed schema: {"messages": [...]}.  
-   3️⃣ If you need to customize the reducer - you need to switch to StateGraph  
+   1. MessageGraph has a built-in reducer for messages (automatically appends). Cannot be customized or add other reducers.  
+   2. MessageGraph does use the fixed schema: {"messages": [...]}.  
+   3. If you need to customize the reducer - you need to switch to StateGraph  
 
 ---
+
+#### 2️⃣ Graph Execution Model
+Pretty simple, consist of two steps, Build and Compile.  
+❗️ Important: Graph is immutable after compilation. Can't add nodes/edges post-compile.  
+What happens during Compile `compile():`:  
+1. Validates all edges point to existing nodes
+2. Checks for unreachable nodes
+3. Ensures START and END are properly connected
+4. Attaches checkpointer for persistence
+5. Creates runnable execution engine
+```
+# Build graph
+graph = StateGraph(AgentState)
+graph.add_node("agent", agent_node)
+graph.add_edge(START, "agent")
+graph.add_edge("agent", END)
+
+# Compile (this is when LangGraph validates structure)
+app = graph.compile(checkpointer=MemorySaver())
+```
