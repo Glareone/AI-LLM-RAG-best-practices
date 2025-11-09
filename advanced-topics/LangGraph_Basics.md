@@ -29,7 +29,7 @@
 [LangGraph Advanced Topics (State Management, Graph Architecture, Conditional Routing, Human-in-the-loop, Parallel Processing) could be found here](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Advanced.md)  
 
 ---
-#### 0️⃣ When to Use What (Decision Framework)  
+### 0️⃣ When to Use What (Decision Framework)  
 
 | Approach | Use When | Don't Use When | Example | 
 | -------- | -------- | -------------- | ------- |
@@ -49,24 +49,23 @@ Does your task require loops or cycles?
 ```
 
 💡 Key Differentiators
-LangGraph becomes necessary when you need:
-
-➡️ Agent loops - "try, evaluate, retry" patterns  
-➡️ Dynamic routing - flow changes based on LLM output or conditions  
-➡️ Persistent state - maintain context across multiple invocations  
-➡️Human checkpoints - pause for approval before continuing  
-➡️ Parallel branches - concurrent execution with state merging  
+LangGraph becomes necessary when you need:  
+   1. Agent loops - "try, evaluate, retry" patterns  
+   2. Dynamic routing - flow changes based on LLM output or conditions  
+   3. Persistent state - maintain context across multiple invocations  
+   4. Human checkpoints - pause for approval before continuing
+   5. Parallel branches - concurrent execution with state merging  
 
 ---
-#### 1️⃣ Core LangGraph Primitives
+### 1️⃣ Core LangGraph Primitives
 
-➡️ StateGraph vs MessageGraph
+🛠️ StateGraph vs MessageGraph
 When to use StateGraph:
   - Need custom fields beyond messages (metadata, scores, counters)  
   - Multi-agent systems with separate concerns  
   - Complex routing logic based on state  
 
-➡️ When to use MessageGraph:  
+🛠️ When to use MessageGraph:  
   - Simple conversational agents  
   - Don't need additional state tracking  
   - Quick prototypes  
@@ -110,7 +109,7 @@ class AgentState:
     retry_count: int = 0
 ```
 
-➡️ StateGraph Reducer. State Update Strategies
+🛠️ StateGraph Reducer. State Update Strategies
 ```python
 from operator import add
 from typing import Annotated
@@ -159,14 +158,13 @@ state = app.get_state(config)
 print(state.values)  # {'messages': [HumanMessage(...), AIMessage(...)]}
 ```
 
-➡️ Reducer in MessageGraph:  
+❗️ Reducer in MessageGraph:  
    1. MessageGraph has a built-in reducer for messages (automatically appends). Cannot be customized or add other reducers.  
    2. MessageGraph does use the fixed schema: {"messages": [...]}.  
    3. If you need to customize the reducer - you need to switch to StateGraph  
 
----
 
-#### 2️⃣ Graph Execution Model
+##### ➡️ Compilation model
 Pretty simple, consist of two steps, Build and Compile.  
 ❗️ Important: Graph is immutable after compilation. Can't add nodes/edges post-compile.  
 What happens during Compile `compile():`:  
@@ -185,3 +183,77 @@ graph.add_edge("agent", END)
 # Compile (this is when LangGraph validates structure)
 app = graph.compile(checkpointer=MemorySaver())
 ```
+
+##### ➡️ Checkpointers - MemorySaver, SqliteSaver, PostgresSaver (foundation for persistence)  
+
+| Checkpointer | Persistence | Use Case | Setup Complexity | 
+| ------------ | ----------- | -------- | ---------------- |
+| MemorySaver | In-memory only | Development, testing, and cases when rerun cost is low | Low (no setup) |
+| SqliteSaver | Local file | Single-machine production, demos | Low (one file path) | 
+| PostgresSaver | Database | Multi-instance production | Medium (DB setup) | 
+| Custom | Your choice | Special requirements (Redis, S3) | High (implement interface) |
+
+Checkpoint contains:
+   1. Full state at each step.
+   2. Metadata
+   3. Parent checkpoint ID (for time-travel).
+
+Implementation:  
+```python
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.checkpoint.sqlite import SqliteSaver
+from langgraph.checkpoint.postgres import PostgresSaver
+
+# Development
+app = graph.compile(checkpointer=MemorySaver())
+
+# Production (local)
+app = graph.compile(checkpointer=SqliteSaver.from_conn_string("checkpoints.db"))
+
+# Production (distributed)
+app = graph.compile(
+    checkpointer=PostgresSaver.from_conn_string("postgresql://...")
+)
+```
+
+#### ➡️ Thread/Run Concepts.
+💡 Ability to run your LangGraph application in different threads:  
+💡 Key concept: Thread ID determines which checkpoint chain to use. Same thread = shared history.  
+```python
+# Step 1: Build graph
+graph = StateGraph(AgentState)
+graph.add_node("agent", agent_node)  # Your code
+graph.add_edge(START, "agent")
+graph.add_edge("agent", END)
+
+# Step 2: Compile = create runnable app
+app = graph.compile()
+
+# Step 3. Thread = Conversation/Session ID
+# Run = Single execution within a thread
+
+config = {
+    "configurable": {
+        "thread_id": "user-123-conversation-1"  # Unique per conversation
+    }
+}
+
+# First invocation (creates thread)
+response1 = app.invoke({"messages": [("user", "Hello")]}, config)
+
+# Second invocation (continues the same thread)
+response2 = app.invoke({"messages": [("user", "Follow-up")]}, config)
+
+# Different thread (separate conversation)
+config2 = {"configurable": {"thread_id": "user-123-conversation-2"}}
+response3 = app.invoke({"messages": [("user", "New topic")]}, config2)
+```
+
+What's happening behind `invoke`?  
+   1. Loads checkpoint (if thread_id provided)  
+   2. Runs your nodes in order (following edges)  
+   3. Inside your nodes → you call OpenAI/Bedrock  
+   4. Saves checkpoint after execution  
+   5. Returns final state  
+
+---
