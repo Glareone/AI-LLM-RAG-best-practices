@@ -247,7 +247,7 @@ Theoretical Part
     a. [Decision-Tree Prompts & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Decision-Tree.md)  
     b. [Multi-Agent Prompt & Pattern. Primitive Version](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)  
     c. [Plan-Execute Prompt & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Plan-Execute.md)  
-    d. [ReAct. Prompts & Ideas](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-ReACT.md)
+    d. [ReAct. Prompts & Ideas](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-ReACT.md)  
     e. [Prompt-Reflection Pattern. Idea](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Reflection.md)  
 5. Semantic Kernel (Microsoft)  
     a. Kernel Architecture - Central orchestration engine  
