@@ -12,9 +12,11 @@
 
 2️⃣ Graph Execution Model  
    - How LangGraph actually runs (iterative execution, not just DAG)  
-   - The START and END special nodes  
+   - The START and END special nodes
+   - Parallel node Execution
    - How edges vs conditional edges differ fundamentally  
-   - Cycles and loop detection/limits  
+   - Cycles and loop detection/limits
+   - Prevent infinite Loops. Attempt, Counter in State, Check Quality result, Token Budget
 
 3️⃣ Subgraphs & Composition  
    - When to use subgraphs vs separate graphs  
@@ -257,3 +259,162 @@ What's happening behind `invoke`?
    5. Returns final state  
 
 ---
+### 2️⃣ Graph Execution Model. START & END Nodes. Conditional Nodes.
+How LangGraph Actually Runs  
+Key concept: LangGraph executes step-by-step, not all at once.  
+```python
+# Each step = one node execution
+Step 1: START → agent
+Step 2: agent → tools
+Step 3: tools → agent
+Step 4: agent → END
+```
+Not a traditional DAG:
+   1. DAGs = no cycles, run once
+   2. LangGraph = allows cycles, runs iteratively until reaching `END`
+
+Execution Flow Example with START and END special nodes.
+```python
+from langgraph.graph import START, END
+
+graph = StateGraph(State)
+graph.add_node("research", research_node)
+graph.add_node("validate", validate_node)
+
+graph.add_edge(START, "research") # START NODE. Specify where to begin
+graph.add_edge("research", "validate")
+graph.add_conditional_edges("validate", should_continue, {
+    "retry": "research",  # ← Cycle!
+    "done": END
+}) # END NODE. Specified where to stop
+
+app = graph.compile()
+```
+
+#### START & END Key rules:
+| Rule | Explanation |
+| ---- | ----------- |
+| START is implicit | Every graph starts here, you don't create it | 
+| Must connect START | At least one edge from START or use set_entry_point() | 
+| END stops execution | Once any node reaches END, graph stops | 
+| Multiple paths to END | Different nodes can route to END |
+
+The common mistake is not connect start to the next agent or not to have the End connected.  
+Example:  
+```python
+# Common mistake:
+# ❌ Forgot to connect START
+graph.add_node("agent", agent_node)
+graph.add_edge("agent", END)
+# Missing: graph.add_edge(START, "agent")
+
+# ✅ Correct
+graph.add_edge(START, "agent")
+```
+graph.add_edge("agent", END)
+
+#### Parallel node execution
+```python
+# If multiple edges from same node (advanced topic)
+graph.add_edge("start", "node_a")
+graph.add_edge("start", "node_b")
+# Both node_a and node_b run in parallel (covered in section 5)
+```
+
+#### Edges vs Conditional Edges
+| Feature | Regular Edge | Conditional Edge |  
+| ------- | ------------ | ---------------- |
+| When to use | Always go to same next node | Route based on logic | 
+| Syntax | add_edge("A", "B") | add_conditional_edges("A", router_fn, mapping) |
+| Deterministic | Yes | No (depends on state/logic) |
+| Example | Always validate after research | Go to tools OR end based on LLM response |
+
+💡Conditional Edge Nuances:
+   1. Router function signature:
+```python
+# Gets full state only
+def router(state: State) -> str:
+    return "next_node_name"
+
+# Or get both state and config
+def router(state: State, config: RunnableConfig) -> str:
+    thread_id = config["configurable"]["thread_id"]
+    return "next_node_name"
+```
+   2. Agent wants to use tool and you declare the tool right in the graph:
+```python
+def route_after_agent(state: State) -> str:
+    last_message = state["messages"][-1]
+    
+    # Check if LLM wants to use tools
+    if last_message.tool_calls:
+        return "tools"
+    return "end"
+
+graph.add_conditional_edges("agent", route_after_agent, {
+    "tools": "tools",
+    "end": END
+})
+```
+
+#### Recursion limit and graph max
+By default the recursion_limit is set to 25 `recursion_limit=25`, you can execute up to 25 nodes before you get an error.  
+But you also can set your own `custom` number of steps, it's useful if you check the response quality.  
+
+```python
+# Default: 25 iterations max
+# Each node execution = 1 iteration
+# If you hit limit → raises GraphRecursionError
+app = graph.compile()
+
+# Custom limit
+app = graph.compile(recursion_limit=100)
+
+START → agent → tools → agent → tools → agent → END
+        [1]     [2]     [3]     [4]     [5]
+
+```
+
+| Step | Node | Iteration Count | 
+| ---- | ---- | --------------- |
+| 1 | agent | 1 | 
+| 2 | tools | 2 |
+| 3 | agent | 3 |
+| 4 | tools | 4 |
+| 5 | agent | 5 | 
+| - | END | - |
+
+#### How to prevent infinite loops
+💡 Pattern 1: Counter in state  
+```python
+class State(TypedDict):
+    messages: Annotated[list, add]
+    loop_count: int
+
+def router(state: State):
+    if state["loop_count"] >= 5:
+        return "end"
+    return "continue"
+```
+
+💡 Pattern 2: Check result quality  
+```python
+def router(state: State):
+    if state["validation_passed"]:
+        return "end"
+    if state["attempts"] >= 3:
+        return "end"  # Give up after 3 tries
+    return "retry"
+```
+💡 Pattern 3: Token budget  
+```python
+def router(state: State):
+    total_tokens = sum(len(m.content) for m in state["messages"])
+    if total_tokens > 10000:
+        return "end"  # Stop if conversation too long
+    return "continue"
+```
+
+---
+
+### 3️⃣ Subgraphs & Composition  
