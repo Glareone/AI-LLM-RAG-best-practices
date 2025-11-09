@@ -4,7 +4,7 @@
    - LangChain: Linear chains, simple sequential workflows  
    - LangGraph: Cyclic workflows, stateful multi-step reasoning, conditional branching, agent loops
 
-1️⃣ [Core LangGraph Primitives](#0%EF%B8%8F⃣-when-to-use-what-decision-framework)  
+1️⃣ [Core LangGraph Primitives](#1%EF%B8%8F⃣-core-langgraph-primitives)  
    - StateGraph vs MessageGraph - which to use when  
    - Compilation model (graph.compile() and what happens)  
    - Checkpointers - MemorySaver, SqliteSaver, PostgresSaver (foundation for persistence)  
