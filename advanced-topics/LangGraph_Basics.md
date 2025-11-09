@@ -56,3 +56,112 @@ LangGraph becomes necessary when you need:
 ➡️ Persistent state - maintain context across multiple invocations  
 ➡️Human checkpoints - pause for approval before continuing  
 ➡️ Parallel branches - concurrent execution with state merging  
+
+---
+#### 1️⃣ Core LangGraph Primitives
+
+➡️ StateGraph vs MessageGraph
+When to use StateGraph:
+  - Need custom fields beyond messages (metadata, scores, counters)  
+  - Multi-agent systems with separate concerns  
+  - Complex routing logic based on state  
+
+➡️ When to use MessageGraph:  
+  - Simple conversational agents  
+  - Don't need additional state tracking  
+  - Quick prototypes  
+
+| Feature | StateGraph | MessageGraph | 
+| ------- | ---------- | ------------ |
+| 📊 State Type | Custom schema (Pydantic, TypedDict, dataclass) | List of messages only | 
+| 🛝Flexibility | Full control over state structure | Fixed message list structure |
+| Use Case | Multi-agent, complex workflows, custom data | Simple chatbots, conversation flow | 
+| State Access | state["custom_field"] | state["messages"] | 
+| 📗 Learning Curve | Higher (must define schema) | Lower (built-in structure) |  
+
+#### ➡️ StateGraph declaration. Recommendation: Use TypedDict for simplicity, Pydantic when you need validation. DataClass is not recommended.
+```python
+# Option 1: TypedDict (simple, no validation)
+from typing import TypedDict, Annotated
+from operator import add
+
+class AgentState(TypedDict):
+    messages: Annotated[list, add]  # Reducer: append messages
+    current_step: str
+    retry_count: int
+```
+```python
+# Option 2: Pydantic (validation, IDE support)
+from pydantic import BaseModel, Field
+
+class AgentState(BaseModel):
+    messages: list = Field(default_factory=list)
+    current_step: str = "start"
+    retry_count: int = Field(default=0, ge=0, le=3)
+```
+```python
+# Option 3: Dataclass (Python standard library)
+from dataclasses import dataclass, field
+
+@dataclass
+class AgentState:
+    messages: list = field(default_factory=list)
+    current_step: str = "start"
+    retry_count: int = 0
+```
+
+➡️ StateGraph Reducer. State Update Strategies
+```python
+from operator import add
+from typing import Annotated
+
+class State(TypedDict):
+    # Append to list (default for messages)
+    messages: Annotated[list, add]
+    
+    # Replace value (default behavior if no annotation)
+    current_tool: str
+    
+    # Custom reducer
+    scores: Annotated[list[float], lambda x, y: x + [max(y)]]
+```
+
+#### ➡️ MessageGraph. Example. Reducer  
+
+Minimal example of MessageGraph:    
+```python
+from langgraph.graph import MessageGraph, END
+
+# 1. DECLARE the messageGraph
+graph = MessageGraph()
+
+# 2. UPDATE STATE in nodes
+def my_agent(messages: list):
+    # messages = current state
+    response = llm.invoke(messages)
+    return [response]  # Return list to APPEND to messages
+
+graph.add_node("agent", my_agent)
+graph.set_entry_point("agent")
+graph.add_edge("agent", END)
+
+app = graph.compile(checkpointer=MemorySaver())
+
+# 3. FETCH STATE
+config = {"configurable": {"thread_id": "123"}}
+
+# Invoke (updates state)
+result = app.invoke([HumanMessage("Hello")], config)
+# result = full message list: [HumanMessage("Hello"), AIMessage("Hi!")]
+
+# Get state later
+state = app.get_state(config)
+print(state.values)  # {'messages': [HumanMessage(...), AIMessage(...)]}
+```
+
+➡️ Reducer in MessageGraph:  
+   1️⃣ MessageGraph has a built-in reducer for messages (automatically appends). Cannot be customized or add other reducers.  
+   2️⃣ MessageGraph does use the fixed schema: {"messages": [...]}.  
+   3️⃣ If you need to customize the reducer - you need to switch to StateGraph  
+
+---
