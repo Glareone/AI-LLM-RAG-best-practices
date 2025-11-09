@@ -235,19 +235,27 @@ Theoretical Part
     b. DVC (Data Version Control) - Data and model versioning  
     c. BentoML - Model serving framework architecture  
 
-### 7. Advanced LLM Framework Architectures
+### 7. Advanced LLM Frameworks. LangGraph. Semantic Kernel.  
 1. LangGraph (Advanced over LangChain)  
     a. State Management - Persistent conversation state
     b. Graph Architecture - Nodes and edges for complex workflows  
     c. Conditional Routing - Dynamic flow based on LLM decisions  
     d. Human-in-the-Loop - Approval gates and manual interventions  
     e. Parallel Processing - Concurrent graph branch execution  
-2. Semantic Kernel (Microsoft)  
+2. [LangGraph Examples and Prototypes](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/README.md)  
+4. LangGraph System Prompt Techniques  
+    a. [Decision-Tree Prompts & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Decision-Tree.md)  
+    b. [Multi-Agent Prompt & Pattern. Primitive Version](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)  
+    c. [Plan-Execute Prompt & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Plan-Execute.md)  
+    d. [ReAct. Prompts & Ideas](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-ReACT.md)
+    e. [Prompt-Reflection Pattern. Idea](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Reflection.md)  
+5. Semantic Kernel (Microsoft)  
     a. Kernel Architecture - Central orchestration engine  
     b. Plugin System - Reusable functions (native C# or prompt-based)  
     c. Planners - Automatic workflow generation  
-    d. Memory Management - Vector-based semantic memory patterns  
-3. Advanced Framework Concepts  
+    d. Memory Management - Vector-based semantic memory patterns
+6. Magentic One + Semantic Kernel
+7. Advanced Framework Concepts  
     a. Multi-Agent Systems - Collaborative AI agent coordination  
     b. Error Recovery Strategies - Retry logic, fallback mechanisms  
     c. Async Execution - Resource management at scale  
