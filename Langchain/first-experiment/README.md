@@ -1,5 +1,5 @@
-## IDE
-Pycharm is used as IDE for this project.
+## Langchain demos
+There are several demo scenarios how langchain could be used in simple case with or without pydantic output parser
 
 ## Running the project
 To run this project you I use conda and uv combination.

@@ -13,7 +13,8 @@ List of Content
 
 Practical Examples:  
 1. [ReACT. Pre-coded loop + LLM to calculate the total weight of dogs](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT_Lesson_1)
-2. React. Using LangGraph. In Progress
+2. [React. Using LangGraph. In Progress](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT-Lab2-LangGraph)
+3. [React. Simple LangGraph Prototype](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/LangGraph_Prototype)
 
 ## LangGraph Patterns
 ![image](https://github.com/user-attachments/assets/336652b8-71ad-441b-a530-a333fd60a1cd)

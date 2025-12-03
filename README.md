@@ -19,10 +19,20 @@ My Workshops and Posts
 14. Crew.AI. Agents in LLM Applications (In Progress)
 15. Pydantic data classes and how to manage the output format (In Progress)
 16. XML vs Markdown vs Json for tagging in prompting and metaprompting (In Progress)
-17. Crawlers for LLMs: https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ , https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f, https://github.com/Skyvern-AI/skyvern, https://gotenberg.dev/docs/routes, https://jina.ai/reader, https://github.com/unclecode/crawl4ai, https://crawlee.dev/, https://github.com/bracesproul/site-rag/, https://www.firecrawl.dev, https://github.com/mishushakov/llm-scraper
-18. Table extraction in RAG systems (In Progress)
-19. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
-20. Misjudgements using LogProbs (In Progress)
+17. Crawlers for LLMs:
+    - https://python.langchain.com/v0.1/docs/use_cases/web_scraping/ ,
+    - https://ai.gopubby.com/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f,
+    - https://github.com/Skyvern-AI/skyvern,
+    - https://gotenberg.dev/docs/routes,
+    - https://jina.ai/reader,
+    - https://github.com/unclecode/crawl4ai,
+    - https://crawlee.dev/,
+    - https://github.com/bracesproul/site-rag/,
+    - https://www.firecrawl.dev,
+    - https://github.com/mishushakov/llm-scraper
+19. Table extraction in RAG systems (In Progress)
+20. [Choosing the right programming language for your next AI LLM project](https://github.com/user-attachments/files/18827122/Languages.for.AIpdf.pdf)
+21. Misjudgements using LogProbs (In Progress)
 
 ### My Workshops
 1. [June 2023. My Workshop Presentation. Run 1.pptx](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/files/11951964/Workshop.Introduction.pptx)  
@@ -120,31 +130,209 @@ Theoretical Part
 18. Document Intelligence, Best Practices (In progress)
 19. [MCP Server example using FastMCP](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/MCPServers/FastMCP-Example)
 
-----------
-### Semantic Kernel
-----------
+---
+## Advanced Topics. Theory and Practice.
+### 1. Advanced Evaluation Metrics & Methodologies
+1. [Document Retrieval Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md)  
+    a. [NDCG@K (Normalized Discounted Cumulative Gain)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - Ranking quality with relevance grades  
+    b. [Mean Reciprocal Rank (MRR)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md#mrr-mean-reciprocal-rank) - First relevant document positioning. How quickly users find their first relevant result. Critical for RAG user experience.  
+    c. [Contextual Relevancy](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md#contextual-relevancy) - How relevant is the retrieved context to the user's question?  
+    c. [Expected Reciprocal Rank (ERR)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - User behavior modeling with graded relevance  
+    d. [Rank-Biased Precision (RBP)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document%20Retrieval%20Metrics.md) - Early result weighting strategies  
+    e. [Embedding Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/README.md) - Intra-cluster vs inter-cluster distance analysis. Quality of your vector space - are similar documents close together   
+2. [Document Retrieval Metrics 2](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Document_Retrieval_Metrics_2.md)  
+    a. Fidelity - Measures recall quality - what percentage of all relevant documents in your dataset were actually retrieved in the top-n results.  
+    b. XDCG - Ranking quality within your retrieved top-k chunks, ignoring the rest of your document collection   
+    c. XDCG vs NDCG  
+    d. Max Relevance N - highest relevance score among your top-k retrieved chunks  
+    e. Holes - Counts missing ground truth data  
+3. [Response Quality Metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    a. [F1, Recall, Precision. Fundamental metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Fundamental%20Metrics%20F1%20Precision%20Recall.md)   
+    b. [BLEU Score - N-gram overlap evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)   
+    c. [ROUGE (L/1/2) - Recall-oriented summarization metrics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    d. [G-Eval (LLM as a judge) - Sophisticated evaluation framework that uses LLMs themselves to evaluate outputs based on detailed criteria.](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    d. [BERTScore - Semantic similarity using contextualized embeddings](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics.md)  
+    e. [BLEURT](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics%202.md#bleurt---bert-based-learned-evaluation-metric) - BERT-based learned evaluation metric  
+    f. SacreBLEU - Standardized BLEU with proper tokenization  
+    g. [METEOR](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Response%20Quality%20Metrics%202.md#meteor--synonym-and-paraphrase-consideration) - Synonym and paraphrase consideration  
+    h. CIDEr - Consensus-based evaluation  
+    i. CHRF - Character-level F-score for multilingual evaluation  
+4. Human-Correlation Metrics   
+    a.  Preference-Based Ranking - Win/loss ratios in A/B testing  
+    b. Pearson/Spearman Correlation - Human judge alignment  
+    c. Likert Scale Rating Systems - Multi-point evaluation frameworks
+
+### 2. RAG Evaluation Frameworks and Libraties. Agentic Application Evaluation
+1. [RAG System assessment and quality control:](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/RAG%20System%20assessment%20and%20quality%20control.md)  
+    a. LangWatch  
+    b. LangFuse    
+    b. Galileo   
+    c. Ragas  
+    d. DeepEval  
+    e. TrueLens  
+    f. HuggingFace (NEW, in progress)    
+    g. AI Foundry
+2. [Agentic Application Evaluation](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/AI_agents/Agentic_Evaluations.md)  
+    a. General Agentic Application Evaluations  
+    b. Monitoring  
+    c. Trajectory Evaluation  
+    d. Structure of the Evaluation  
+    e. Application Improvements using G-Eval (LLM-as-a-Judge)  
+
+### 3. Advanced ML Architecture & Training
+1. Neural Network Fundamentals   
+    a. ReLU vs Advanced Activations (GELU, Swish/SiLU)
+    b. Layer Normalization vs Batch Normalization - Training stability techniques  
+    c. Gradient Clipping - Exploding gradient prevention  
+    d. Mixed Precision Training - FP16/BF16 memory optimization  
+2. CNN Advanced Concepts   
+    a. Kernel Size Impact - Local vs global feature extraction (3x3 vs 7x7)  
+    b. Parameter Sharing Benefits - Translation invariance principles  
+    c. Hierarchical Feature Learning - Low-level to high-level progression  
+    d. CNN vs MLP Scalability - O(k×c×f) vs O(n×m) parameter complexity  
+3. Advanced Training Techniques  
+    a. Learning Rate Scheduling - Cosine annealing, linear decay  
+    b. Warmup Steps - Training stability (10% of total steps)  
+    c. Checkpoint Averaging - Model stability improvement  
+    d. Gradient Accumulation - Simulating larger batch sizes  
+
+### 4. [Parameter-Efficient Fine-tuning (PEFT)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Readme.md)
+1. [LoRA (Low-Rank Adaptation)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/LoRa.md)  
+    a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
+    b. Alpha Scaling Factor - Typically 16-32  
+    c. Target Module Selection - Query, value, key, output projections  
+    d. AdaLoRA - Adaptive rank allocation  
+    e. QLoRA - 4-bit quantized LoRA for memory efficiency  
+2. [Training Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Training%20Parameters.md)  
+    a. Learning Rate Ranges - 1e-5 to 5e-4 for LLMs with warmup  
+    b. Batch Size Optimization - 8-32 full fine-tuning, 64-128 LoRA  
+    c. Sequence Length Limits - 512-4096 tokens task dependency  
+    d. Weight Decay (L2 Regularization) - λ||w||² with λ = 1e-4 to 1e-2  
+
+### 5. Advanced Retrieval & Re-ranking
+1. [Re-ranking Algorithms](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Advanced%20Retrieval%20&%20Re-ranking.md)   
+    a. Reciprocal Rank Fusion (RRF) - RRF_score = Σ(1/(k + rank_i))  
+    b. Cross-encoder vs Bi-encoder - Accuracy vs speed trade-offs  
+    c. Neural Re-rankers - BERT/T5-based cross-attention models  
+    d. Learning to Rank (LTR) - ML-based ranking optimization  
+    e. Score Normalization Techniques - Min-max, z-score, sigmoid   
+
+2. [Advanced Retrieval Concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Advanced%20Retrieval%20&%20Re-ranking.md)  
+    a. Semantic Similarity Scoring - Cosine similarity between embeddings  
+    b. Context Preservation - Chunk coherence maintenance  
+    c. Window Size Optimization - Re-ranking candidate selection (100-1000)  
+
+### 6. MLOps & Production Platforms
+1. Evaluation Platforms  
+    a. AI Foundry (Microsoft) - Model testing and evaluation  
+    b. Weights & Biases (W&B) - Experiment tracking  
+    c. Neptune.ai - MLOps platform capabilities  
+    d. LangSmith (LangChain) - LLM application testing  
+    e. Phoenix (Arize AI) - LLM observability and evaluation  
+
+2. Model Management  
+    a. MLFlow - Model lifecycle management  
+    b. DVC (Data Version Control) - Data and model versioning  
+    c. BentoML - Model serving framework architecture  
+
+### 7. Advanced LLM Frameworks. LangGraph. Semantic Kernel.  
+1. [LangGraph Basics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md)  
+    a. [When to Use What (Decision Framework)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    b. [Core LangGraph Primitives: StateGraph & MessageGraph, Compilation model, Checkpointers, Thread/Run concepts](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)   
+    c. [Graph Execution Model: how LangGraph executes iteratively. StateGraph & MessageGraph](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    d. [LangGraph Checkpointers: MemorySaver, SqliteSaver, PostgresSaver](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#0%EF%B8%8F%E2%83%A3-when-to-use-what-decision-framework)  
+    e. [LangGraph composition: START, END, Conditional Edge. Parallel node execution. Cycle limit (recursion_limit), infinite loops](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Basics.md#2%EF%B8%8F%E2%83%A3-graph-execution-model-start--end-nodes-conditional-nodes)  
+    e. Subgraphs & Composition: when to use subgraphs vs separate graphs  
+    f. Error Handling & Interrupts (Critical for production)  
+3. [LangGraph Advanced Topics](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/LangGraph_Advanced.md)  
+    a. State Management - Persistent conversation state  
+    b. Graph Architecture - Nodes and edges for complex workflows  
+    c. Conditional Routing - Dynamic flow based on LLM decisions  
+    d. Human-in-the-Loop - Approval gates and manual interventions  
+    e. Parallel Processing - Concurrent graph branch execution  
+4. [LangGraph Examples and Prototypes](https://github.com/Glareone/AI-LLM-RAG-best-practices/edit/main/README.md)  
+5. LangGraph System Prompt Techniques  
+    a. [Decision-Tree Prompts & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Decision-Tree.md)   
+    b. [Multi-Agent Prompt & Pattern. Primitive Version](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Multi-Agent.md)   
+    c. [Plan-Execute Prompt & Pattern](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Plan-Execute.md)  
+    d. [ReAct. Prompts & Ideas](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-ReACT.md)  
+    e. [Prompt-Reflection Pattern. Idea](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangGraph/Prompt-Reflection.md)  
+6. Semantic Kernel (Microsoft)  
+    a. Kernel Architecture - Central orchestration engine  
+    b. Plugin System - Reusable functions (native C# or prompt-based)  
+    c. Planners - Automatic workflow generation  
+    d. Memory Management - Vector-based semantic memory patterns
+7. Magentic One + Semantic Kernel
+8. Advanced Framework Concepts  
+    a. Multi-Agent Systems - Collaborative AI agent coordination  
+    b. Error Recovery Strategies - Retry logic, fallback mechanisms  
+    c. Async Execution - Resource management at scale  
+
+### 8. Structured Output & Schema Design
+1. Pydantic Advanced Usage  
+    a. Field Validation - Custom validators, constraints (min/max, regex)  
+    b. JSON Schema Generation - Automatic API documentation  
+    c. Error Handling - Detailed validation error message design  
+    d. Schema Compliance Monitoring - Production tracking metrics  
+2. Best Practices  
+    a. Schema Complexity vs Success Rates - Optimization strategies  
+    b. Retry Logic Implementation - Parse failure handling  
+    c. Validation Feedback Loops - Error correction workflows  
+
+### 9. Massive Parallel Training (Enterprise Scale)  
+1. Distributed Training Strategies  
+    a. Data Parallelism - Batch distribution across GPUs  
+    b. Model Parallelism - Layer splitting across devices  
+    c. Pipeline Parallelism - Sequential processing stages  
+    d. Gradient Synchronization - AllReduce, parameter servers  
+    e. Mixed Precision Training - Memory efficiency optimization  
+
+### 10. Advanced Overfitting Prevention  
+1. Regularization Techniques  
+    a. Early Stopping - Validation loss plateau detection  
+    b. Dropout Rates - 0.1-0.3 optimal ranges  
+    c. Training/Validation Loss Curves - Overfitting gap analysis  
+    d. Cross-validation Strategies - 5-10 fold robust evaluation
+
+### [11. Homomorphic encryption (encryption on the fly) in LLMs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
+1. [Main Topics. What, Why, How](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Encryption_Main.md)
+2. [Q&A. Quick references](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)    
+    a. [Whether or not. Use Cases](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    b. [How to Start](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    c. [Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)  
+    d. [Performance and Trade-offs](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Q&A_Quick_References.md#qa-quick-references)    
+2. Examples  
+    a. [TenSeal, Concrete-ML, Microsoft Seal](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Examples.md)  
+---
+
+### LangWatch vs LangFuse vs AI Foundry for SemanticKernel
+1. [LangWatch vs LangFuse vs AI Foundry comparison](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangWatch/LangWatch%20And%20LangFuse.md)
+---
+### Advanced Topics. Practice. Semantic Kernel
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/86d0f7e2-cf7f-4a2c-93a1-a97427498ed0)  
 
-### Semantic Kernel. Knowledge base
+### Advanced Topics. Practice. Semantic Kernel Knowledge base
 1. [Semantic kernel and AI Assistant](https://devblogs.microsoft.com/semantic-kernel/assistants-a-first-look-into-using-openai-assistants-with-semantic-kernel/)
 2. [Creative Writing Assistant with Semantic Kernel and .Net Aspire](https://devblogs.microsoft.com/semantic-kernel/guest-blog-creative-writing-assistant-a-multi-agent-app-sample-with-semantic-kernel-net-aspire/?ocid=semantic-kernel_eml_tnp_autoid150_title)
 
-### SemanticKernel. Practical part
+### Advanced Topics. Practice. SemanticKernel.
 1. [Initial Example](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ShortIntentExtraction.cs)
 2. [Interactive Chat with Chat History](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/InteractiveChatFunction.cs)
 3. [Model Switching. Hugging Face](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/ModelSwitching_HuggingFaceModel.cs)
 4. [Semantic Function for Conversational Chat](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticFunctionForConversationalChat.cs)
 5. [Semantic Kernel Pipeline](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/blob/main/ChatGPT.AzureFunction/ChatGPT.AzureFunction/SemanticKernel.ConsoleApp/SemanticKernelPipeline.cs)
-
------------
-### LangGraph & LangChain
------------
+---
+### Advanced Topics. Practice. LangGraph & LangChain
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/0d7221a7-fff5-4d3d-9eae-1473cf338f38)
 
 Table of Content:  
 1. LangChain using Golang (In Progress)
-2. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
+2. [LangChain. Demo examples wiht pipelines](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/Langchain/first-experiment)
+3. [LangGraph. Patterns. Examples](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph)
+4. [ReACT. Pre-coded loop + LLM to calculate the total weight of dogs](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT_Lesson_1)
+5. [React. Using LangGraph. In Progress](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/Examples/ReACT/ReACT-Lab2-LangGraph)
+6. [React. Simple LangGraph Prototype](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/LangGraph_Prototype)
 
 -----------
 ### RAG. Cheatsheet
