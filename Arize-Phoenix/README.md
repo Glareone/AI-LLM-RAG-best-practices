@@ -42,6 +42,23 @@ Phoenix provides hierarchical trace visualization, making it easy to understand:
 - How long each operation took
 - Input/output at every step
 
+## What and how to evaluate
+![img](pic/choosing_what_to_evaluate.png)
+
+**Evaluation Matrix:** 
+![img](pic/evaluation_matrix.png)
+
+### Evaluating the Router:
+**Evaluating the Router:**
+![img](pic/evaluating_router.png)
+
+**How to evaluate the router:**
+![img](pic/how_to_evaluate_the_router.png)
+
+### Evaluaing the skills/functions/tools
+![img.png](pic/evaluating_skills.png)
+![img.png](pic/evaluating_skills_2.png)
+
 ## Repository Structure
 
 ```
