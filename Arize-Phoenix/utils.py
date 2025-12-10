@@ -2,15 +2,9 @@ from openai import AzureOpenAI
 import pandas as pd
 import json
 import duckdb
-from phoenix.session.session import launch_app
 from pydantic import BaseModel, Field
-from IPython.display import Markdown
-
-import phoenix as px
-import os
 from openinference.instrumentation.openai import OpenAIInstrumentor
 from opentelemetry.trace import Status, StatusCode
-from openinference.instrumentation import TracerProvider
 from phoenix.otel import register
 from dotenv import load_dotenv, find_dotenv
 
