@@ -305,8 +305,10 @@ Theoretical Part
     a. [TenSeal, Concrete-ML, Microsoft Seal](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/advanced-topics/Homomorphic/Homomorphic_Examples.md)  
 ---
 
-### LangWatch vs LangFuse vs AI Foundry for SemanticKernel
+### AI System monitoring, evaluation and tracking. LangWatch vs LangFuse vs Phoenix vs AI Foundry
 1. [LangWatch vs LangFuse vs AI Foundry comparison](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangWatch/LangWatch%20And%20LangFuse.md)
+2. [Examples. Arize Phoenix for Python](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/tree/main/Arize-Phoenix)
+3. Examples. Arize Phoenix for LangGraph (In progress)  
 ---
 ### Advanced Topics. Practice. Semantic Kernel
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
