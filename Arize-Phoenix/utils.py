@@ -343,7 +343,8 @@ def run_agent(messages):
             else:
                 print("No tool calls, returning final response")
                 span.set_output(value=response.choices[0].message.content)
-                return response.choices[0].message.content
+                # Return the full messages list for trajectory analysis
+                return messages
 
 
 ### Creating the Main Span
