@@ -5,17 +5,19 @@ This repository contains experiments and learnings from exploring **Arize Phoeni
 ## Table of Contents
 
 - [Overview](#overview)
-- [What is Arize Phoenix?](#what-is-arize-phoenix)
-- [Repository Structure](#repository-structure)
-- [Setup Instructions](#setup-instructions)
-- [Key Concepts](#key-concepts)
-  - [Understanding @tracer.tool() vs @tracer.chain()](#understanding-tracertool-vs-tracerchain)
-  - [Agent Architecture](#agent-architecture)
-  - [Tracing Hierarchy](#tracing-hierarchy)
-- [Notebooks](#notebooks)
-- [Key Learnings](#key-learnings)
-- [Running the Experiments](#running-the-experiments)
-- [Additional Resources](#additional-resources)
+- [What is Arize Phoenix?](#what-is-arize-phoenix)  
+- [What to evaluate](#what-and-how-to-evaluate)  
+- [Trajectory Analysis. Why it matters and how to monitor](#why-trajectory-matters)  
+- [Repository Structure](#repository-structure)  
+- [Setup Instructions](#setup-instructions)  
+- [Key Concepts](#key-concepts)  
+  - [Understanding @tracer.tool() vs @tracer.chain()](#understanding-tracertool-vs-tracerchain)  
+  - [Agent Architecture](#agent-architecture)  
+  - [Tracing Hierarchy](#tracing-hierarchy)  
+- [Notebooks](#notebooks)  
+- [Key Learnings](#key-learnings)  
+- [Running the Experiments](#running-the-experiments)  
+- [Additional Resources](#additional-resources)  
 
 ## Overview
 
@@ -59,6 +61,68 @@ Phoenix provides hierarchical trace visualization, making it easy to understand:
 ![img.png](pic/evaluating_skills.png)
 ![img.png](pic/evaluating_skills_2.png)
 
+### Evaluating Agent Trajectories
+
+#### Why Trajectory Matters
+
+Even when your agent produces the correct output, the path it takes to get there matters significantly. Efficient trajectories mean:
+- **Lower costs** - Fewer LLM calls and tool executions
+- **Faster responses** - Less processing time for users
+- **Better user experience** - Quick, efficient answers
+- **Reduced token consumption** - Lower API costs
+
+![Does trajectory matter?](pic/does_trajectory_matters.png)
+
+The image above shows two paths that produce the same correct answer:
+- **Inefficient path (left)**: 11 steps with redundant router calls and repeated tool usage
+- **Efficient path (right)**: 6 steps with optimal routing directly to the answer
+
+#### Trajectory Complexity in Real Systems
+
+![Trajectory complexity](pic/trajectory_analysis_using_arize_phoenix.png)
+
+As your AI systems grow, trajectories become increasingly complex:
+- **Single agent systems**: One router coordinating multiple tools
+- **Multi-agent systems**: Multiple agents that can call each other, creating branching paths
+- **Tool chains**: Tools calling other tools, creating nested execution paths
+
+**Arize Phoenix** helps visualize these complex trajectories, making it possible to:
+- Identify bottlenecks and inefficiencies
+- Compare different execution paths
+- Optimize routing decisions
+- Debug unexpected agent behavior
+
+#### Convergence: Measuring Path Optimality
+
+![Convergence metric](pic/trajectory_analysis_convergence.png)
+
+**Convergence** is a metric that measures how closely your agent follows the optimal path for a given query.
+
+**How it works:**
+1. Run the same query (or semantically equivalent queries) multiple times
+2. Track the number of steps (router calls, tool executions) for each run
+3. Identify the optimal (shortest) path length
+4. Calculate convergence score: `optimal_path_length / actual_path_length`
+
+**Convergence score interpretation:**
+- **1.0** = Perfect convergence (agent took the optimal path)
+- **0.5** = Agent took twice as many steps as optimal
+- **0.33** = Agent took three times as many steps as optimal
+
+**Why this matters:**
+- Identifies routing inefficiencies
+- Highlights when the agent "gets lost" in tool loops
+- Helps optimize prompts and tool descriptions
+- Provides a quantitative metric for agent efficiency improvements
+
+**Example in Lab 9 (L9.ipynb):**
+The notebook demonstrates convergence evaluation by:
+1. Creating 17 semantically equivalent questions asking for the same answer
+2. Running each through the agent to track path lengths
+3. Computing the optimal path length (shortest successful path)
+4. Calculating convergence scores for each execution
+5. Visualizing results in Phoenix Experiments UI
+
 ## Repository Structure
 
 ```
@@ -66,11 +130,14 @@ Phoenix provides hierarchical trace visualization, making it easy to understand:
 ├── README.md                              # This file
 ├── .env                                   # Environment variables (not tracked)
 ├── L3_modified.ipynb                      # Lab 1: Basic agent without tracing
-├── L5_with_arize_phoenix.ipynb            # Lab 2: Agent with Phoenix tracing'
+├── L5_with_arize_phoenix.ipynb            # Lab 2: Agent with Phoenix tracing
 ├── L7_add_evaluations_to_phoenix.ipynb    # Lab 3: Phoenix evaluations with comprehensive explanation
+├── L9.ipynb                               # Lab 4: Trajectory analysis and convergence evaluation
 ├── helper.py                              # Azure OpenAI configuration helper
+├── utils.py                               # Shared utilities and configurations
 ├── generate_data.py                       # Script to generate sample sales data
 ├── pyproject.toml                         # Project dependencies
+├── pic/                                   # Images used in README and notebooks
 └── data/
     └── Store_Sales_Price_Elasticity_Promotions_Data.parquet
 ```
