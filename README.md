@@ -198,11 +198,11 @@ Theoretical Part
 
 ### 4. [Parameter-Efficient Fine-tuning (PEFT)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Readme.md)
 1. [LoRA (Low-Rank Adaptation)](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/LoRa.md)  
-    a. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
-    b. Alpha Scaling Factor - Typically 16-32  
-    c. Target Module Selection - Query, value, key, output projections  
-    d. AdaLoRA - Adaptive rank allocation  
-    e. QLoRA - 4-bit quantized LoRA for memory efficiency  
+    a. [Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Fine%20Tuning/Readme.md#a-rank-parameter-r---8-64-range-efficiency-vs-capacity-trade-off)  
+    b. [Alpha Scaling Factor - Typically 16-32](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Fine%20Tuning/Readme.md#b-alpha-scaling-factor---typically-16-32)  
+    c. [Target Module Selection - Query, value, key, output projections](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Fine%20Tuning/Readme.md#c-target-module-selection---query-value-key-output-projections)    
+    d. [AdaLoRA - Adaptive rank allocation](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Fine%20Tuning/Readme.md#d-adalora---adaptive-rank-allocation)  
+    e. [QLoRA - 4-bit quantized LoRA for memory efficiency](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Fine%20Tuning/Readme.md#d-adalora---adaptive-rank-allocation)  
 2. [Training Parameters](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/Fine%20Tuning/Training%20Parameters.md)  
     a. Learning Rate Ranges - 1e-5 to 5e-4 for LLMs with warmup  
     b. Batch Size Optimization - 8-32 full fine-tuning, 64-128 LoRA  
