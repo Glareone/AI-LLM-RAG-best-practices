@@ -343,14 +343,8 @@ Table of Content:
 6. [React. Simple LangGraph Prototype](https://github.com/Glareone/AI-LLM-RAG-best-practices/tree/main/LangGraph/LangGraph_Prototype)
 
 -----------
-### RAG. Cheatsheet
+### RAG. Cheatsheet for .Net
 -----------
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/2b8ca392-dc0e-4ebc-9f85-5bcbb8bf27bb)
-
-#### 1: PowerAutomate. React on manual trigger  
-<img width="1015" alt="image" src="https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/57421682-1207-4b76-897a-0814c40a33dc">   
-
-#### 2: PowerAutomate. React on keyword mentioned  
-<img width="1101" alt="image" src="https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/cb134e8f-3c0c-4e0b-abe2-ff350570a6b5">  
 
 
