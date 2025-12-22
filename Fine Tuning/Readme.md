@@ -68,6 +68,8 @@ It means, that instead of retraining billions of weights, PEFT methods like LoRA
 
 ---
 #### A. Rank Parameter (r) - 8-64 range, efficiency vs capacity trade-off  
+> r
+
 The "r" parameter determines the size of the adapter matrices and represents the rank of the low-rank decomposition.  
 In other words, it is the level of detail in your modifications. Higher rank = more capacity to learn, but also more parameters to train.
 
@@ -90,6 +92,36 @@ In other words, it is the level of detail in your modifications. Higher rank = m
 ---
 
 #### B. Alpha Scaling Factor - Typically 16-32  
+> alpha / r
+
+A scaling factor that controls how much the LoRA updates influence the original model. Specifically, the LoRA contribution is scaled by (alpha / r).  
+The volume knob for your fine-tuning. It determines how strongly your training data affects the model's behavior.  
+
+**Typical Values**:
+1. **alpha = 16**: Conservative, subtle changes
+2. **alpha = 32**: Moderate, common default
+3. **alpha = 64**: Aggressive, strong adaptation
+
+The Relationship Between Alpha and Rank:
+The effective learning rate of LoRA adapters is proportional to `alpha / r`:
+| Configuration |    alpha/r |    Effect |
+| -- | -- | -- |
+| r=8,  alpha=16 |   2.0 |       Moderate influence |
+| r=16, alpha=16 |   1.0 |       Gentle influence   |
+| r=16, alpha=32 |   2.0 |       Moderate influence |
+| r=32, alpha=32 |   1.0 |       Gentle influence   |
+| r=8,  alpha=32 |   4.0 |       Strong influence   |
+
+**Common Practices**:
+1. Use alpha = 2 × r as a starting point Example: r=8 → alpha=16, or r=16 → alpha=32
+
+Why It Matters:
+
+Too low: Model doesn't learn enough from your data
+Too high: Model forgets pre-trained knowledge (catastrophic forgetting)
+The ratio helps balance new learning with preserving the base model's capabilities
+
+Practical Tip: If your fine-tuned model produces outputs that are too similar to the base model (not learning enough), increase alpha. If it "forgets" general knowledge, decrease alpha or increase r.
 
 #### C. Target Module Selection - Query, value, key, output projections  
 
