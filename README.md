@@ -228,9 +228,12 @@ Theoretical Part
     b. Weights & Biases (W&B) - Experiment tracking  
     c. Neptune.ai - MLOps platform capabilities  
     d. LangSmith (LangChain) - LLM application testing  
-    e. Phoenix (Arize AI) - LLM observability and evaluation  
+    e. [Phoenix (Arize AI) - LLM observability and evaluation](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/tree/main/Arize-Phoenix)  
+      - [trajectory analysis](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L9.ipynb)  
+      - [phoenix. evaluations](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L7_add_evaluations_to_phoenix.ipynb)  
+      - [tool and span tracing](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L5_with_arize_phoenix.ipynb)  
 
-2. Model Management  
+3. Model Management  
     a. MLFlow - Model lifecycle management  
     b. DVC (Data Version Control) - Data and model versioning  
     c. BentoML - Model serving framework architecture  
@@ -308,7 +311,10 @@ Theoretical Part
 ### AI System monitoring, evaluation and tracking. LangWatch vs LangFuse vs Phoenix vs AI Foundry
 1. [LangWatch vs LangFuse vs AI Foundry comparison](https://github.com/Glareone/AI-LLM-RAG-best-practices/blob/main/LangWatch/LangWatch%20And%20LangFuse.md)
 2. [Examples. Arize Phoenix for Python](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/tree/main/Arize-Phoenix)
-3. Examples. Arize Phoenix for LangGraph (In progress)  
+  a. [Phoenix. Trajectory analysis](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L9.ipynb)  
+  b. [Phoenix. Evaluations](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L7_add_evaluations_to_phoenix.ipynb)  
+  c. [Phoenix. Tool and Span tracing](https://github.com/Glareone/AI-RAG-Basics-To-Advanced-With-Examples/blob/main/Arize-Phoenix/L5_with_arize_phoenix.ipynb)  
+4. Examples. Arize Phoenix for LangGraph (In progress)  
 ---
 ### Advanced Topics. Practice. Semantic Kernel
 ![image](https://github.com/Glareone/OpenAI-and-ChatGPT-meet-.Net/assets/4239376/f9ed16f2-80ba-42c9-b6fc-50b488cee8d2)  
